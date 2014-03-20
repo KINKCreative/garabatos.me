@@ -31,3 +31,6 @@
 [submodule "google-sitemaps"]
 	path = google-sitemaps
 	url = https://github.com/silverstripe-labs/silverstripe-googlesitemaps.git
+[submodule "js/reveal.js"]
+	path = js/reveal.js
+	url = https://github.com/hakimel/reveal.js
