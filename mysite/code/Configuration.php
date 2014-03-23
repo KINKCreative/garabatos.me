@@ -16,3 +16,22 @@ class Articles extends ModelAdmin {
 	}
 	
 }
+
+class Products extends ModelAdmin {
+	
+	static $url_segment = 'products';
+	
+	static $menu_title = 'Products';
+	
+	static $managed_models = array(
+		'Product',
+		'Collection',
+		'ProductVariation'
+	);
+		
+	public $showImportForm = true;
+	
+	function SearchClassSelector(){
+		return "dropdown";
+	}
+}

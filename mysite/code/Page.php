@@ -207,5 +207,9 @@ class Page_Controller extends ContentController {
 			return $s;
 		}
 	}
+
+	public function getColections() {
+		return Collection::get();
+	}
 	
 }

@@ -63,8 +63,4 @@ class HomePage_Controller extends Page_Controller {
 		return $results;
 	}
 	
-	public function Projects() {
-		$p = Project::get();
-		return $p;
-	}	
 }

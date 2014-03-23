@@ -52,7 +52,7 @@ class Linkable extends DataExtension {
 	}
 	
 	function getURLPrefix() {
-		$p = $this->owner->URLPrefix;
+		$p = isset($this->owner->URLPrefix) ? $this->owner->URLPrefix : "";
 		return ($p ? $p : strtolower($this->owner->ClassName))."/";
 	}
 	
