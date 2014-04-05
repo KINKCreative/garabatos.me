@@ -42,7 +42,12 @@ set :deploy_to, '/srv/www/garabatos.me'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+
 namespace :deploy do
+
+	task :composer_install do
+    	run "php /var/www/composer.phar install --working-dir #{latest_release}"
+	end
 
   desc 'composer install'
   task :composer_install do
@@ -53,11 +58,6 @@ namespace :deploy do
     end
   end
 
-  after "deploy:finalize_update", "deploy:composer_install"
+  after "deploy:composer_install"
 
-end
-
-
-task :composer_install do
-    run "php /var/www/composer.phar install --working-dir #{latest_release}"
 end
