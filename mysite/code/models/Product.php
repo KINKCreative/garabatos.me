@@ -27,6 +27,10 @@ class Product extends DataObject {
         )
     );
 
+    static $defaults = array(
+        'Price' => 5
+    );
+
     function getCMSFields() {
         $fields = parent::getCMSFields();
         if($this->ID) {
@@ -56,5 +60,6 @@ class Product extends DataObject {
         }
         return $fields;
     }
+
 
 }

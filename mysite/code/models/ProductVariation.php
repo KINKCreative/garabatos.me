@@ -24,4 +24,8 @@ class ProductVariation extends DataObject {
         return $fields;
     }
 
+    public function getPrice() {
+        return $this->DefaultPrice;
+    }
+
 }

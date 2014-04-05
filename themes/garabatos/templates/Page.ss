@@ -24,7 +24,7 @@
 		<!-- For syntax highlighting -->
 		<!-- <link rel="stylesheet" href="js/reveal.js/lib/css/zenburn.css"> -->
 
-		<script src="js/vendor/modernizr.js"></script>
+		<script src="js/foundation/js/vendor/modernizr.js"></script>
 
 		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
 		<script>
@@ -52,14 +52,12 @@
 
 		<ul class="nav side-nav">
 			<li><a href="#">Home</a></li>
-			<li><a href="#/collections">Collections</a>
-			<% if Collections %>
-			<ul class="submenu">
-				<% loop Collections %>
-				<li><a href="#/$URLSegment">$Title</a></li>
-				<% end_loop %>
-			</ul>
-			<% end_if %>
+			<li><a href="javascript:;" class="collections_dropdown">Collections <i class="icon icon-angle-down"></i></a>
+				<ul class="collections_submenu submenu" style="display:none;">
+					<% loop Collections %>
+					<li><a href="#/$URLSegment">$Title</a></li>
+					<% end_loop %>
+				</ul>
 			</li>
 			<li><a href="#/order">How to order</a></li>
 			<li><a href="#/contact">Contact</a></li>
@@ -91,7 +89,10 @@
 			      type: "PayPal",
 			      email: "info@kinkcreative.com"
 			    },
-			    cartStyle: "table"
+			    cartStyle: "table",
+			    shippingCustom: function(){ 
+			    	return 5 + simpleCart.quantity()*2;
+			    }
 			  });
 
 			// Full list of configuration options available here:
@@ -159,6 +160,24 @@
 				    quantity: quantity
 				});
 			}
+
+			$(".checkbox").change(function() {
+				if($(this).prop("checked")==true) {
+					simpleCart.data[taxRate] = 0.08;
+					$(".simpleCart_tax").fadeIn();
+				}
+				else {
+					simpleCart.data[taxRate] = 0;
+					$(".simpleCart_tax").fadeOut();	
+				}
+			});
+
+			$(".collections_dropdown").click(function() {
+
+				$(".collections_submenu").slideToggle(500);
+				$(this).find(".icon").toggleClass("icon-angle-down").toggleClass("icon-angle-up");
+			});
+
 
 		</script>
 
