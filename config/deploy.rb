@@ -58,6 +58,6 @@ namespace :deploy do
     end
   end
 
-  after "deploy:composer_install"
+  after "deploy:finalize_update", "deploy:composer_install"
 
 end
