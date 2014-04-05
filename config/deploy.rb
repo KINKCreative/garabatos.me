@@ -42,6 +42,12 @@ set :deploy_to, '/srv/www/garabatos.me'
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
+SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}"
+
+namespace :deploy do
+  before :starting, 'composer:install_executable'
+end
+
 
 namespace :deploy do
 
