@@ -55,15 +55,15 @@ namespace :deploy do
     	run "php /var/www/composer.phar install --working-dir #{latest_release}"
 	end
 
-  desc 'composer install'
-  task :composer_install do
-    on roles(:web) do
-        within release_path do
-            execute 'composer', 'install', '--no-dev', '--optimize-autoloader'
-        end
-    end
-  end
+	desc 'composer install'
+	task :composer_install do
+	on roles(:web) do
+	    within release_path do
+	        execute 'composer', 'install', '--no-dev', '--optimize-autoloader'
+	    end
+	end
+	end
 
-  after "deploy:finalize_update", "deploy:composer_install"
+	after :updated, 'deploy:composer_install'
 
 end
