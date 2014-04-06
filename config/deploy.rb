@@ -1,69 +1,119 @@
-# config valid only for Capistrano 3.1
-lock '3.1.0'
+# My ./config directory in silverstripe looks like this:
+# ./503.php <- a 503 Maintainance page
+# ./_ss_environment.php <- the production environment settings
+# ./deploy.rb <- is the recipe below
+#
 
-set :application, 'Garabatos.me'
-set :repo_url, 'https://github.com/KINKCreative/garabatos.me.git'
+# Application settings
+set :application, "domain.com"
+set :shared_children, %w(assets)
 
-set :branch, 'master'
+# Servers settings
+server 'domain.com', :app, :web, :db
+set :deploy_to, "/var/www/#{application}"
+set :keep_releases, 4
+
+# User settings
+set :runner, "stig"
+set :user, "stig"
+set :use_sudo, false # sudo isn't required for my deployment.
+set :webserver_group, "www-data"
+
+# SCM settings
+# Your git clone URL
+set :repository, "user@gitserver.com:/var/git/repository.git"
+set :scm, "git"
+set :branch, "master" # git branch to deploy
+set :scm_verbose, false
+# faster deploys
 set :deploy_via, :remote_cache
-set :scm, :git
-
-set :keep_releases, 5
-
+# If git submodules is used, this is very much needed
 set :git_enable_submodules, 1
 
-# Default branch is :master
-# ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }
+# Database settings, used for taking backups and restoring databases
+set :db_user, 'dbuser'
+set :db_password, 'dbpass'
+set :db_schema, 'dbschema'
 
-# Default deploy_to directory is /var/www/my_app
-set :deploy_to, '/srv/www/garabatos.me'
-
-# Default value for :scm is :git
-# set :scm, :git
-
-# Default value for :format is :pretty
-# set :format, :pretty
-
-# Default value for :log_level is :debug
-# set :log_level, :debug
-
-# Default value for :pty is false
-# set :pty, true
-
-# Default value for :linked_files is []
-# set :linked_files, %w{config/database.yml}
-
-# Default value for linked_dirs is []
-# set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
-
-# Default value for default_env is {}
-# set :default_env, { path: "/opt/ruby/bin:$PATH" }
-
-# Default value for keep_releases is 5
-# set :keep_releases, 5
-
-SSHKit.config.command_map[:composer] = "php #{shared_path.join("composer.phar")}"
+# --------------------------------------------
+# SSH
+# --------------------------------------------
+ssh_options[:forward_agent] = false
+default_run_options[:pty] = true  # Must be set for the password prompt from git to work
+ssh_options[:port] = 22
 
 namespace :deploy do
-  before :starting, 'composer:install_executable'
+	task :update_code, :except => { :no_release => true } do
+		on_rollback {
+			run "mysql -u#{db_user} -p#{db_password} #{db_schema} < #{release_path}/backup.sql"
+			run "rm -rf #{release_path}; true"
+		}
+		strategy.deploy!
+		finalize_update
+	end
+	
+	task :finalize_update, :except => { :no_release => true } do
+		
+		shared_children.each{ | folder |
+			run "ln -s #{shared_path}/#{folder} #{latest_release}/#{folder}"
+		}
+	end
+
+  task :migrate do
+		top.upload "./config/_ss_environment.php", "#{latest_release}/_ss_environment.php", :via => :scp
+		run "mkdir #{latest_release}/silverstripe-cache"
+		run "#{latest_release}/sapphire/sake dev/build"
+		run "chmod -R g+w #{latest_release}"
+		run "chown -R :www-data #{latest_release}"
+		#logger.important "the migrate action doesnt make sense in our deploy"
+	end
+
+	task :restart do
+		#logger.important "the restart task doesnt make sense in our deploy"
+	end
+
+
+
+	namespace :web do
+		desc <<-DESC
+      Puts the site in 503 maintaince mode
+		DESC
+		task :disable, :roles => :web, :except => { :no_release => true } do
+			if previous_release
+				logger.important "Putting site in maintaince"
+				top.upload "./config/503.php", "#{current_release}/maintainance.php", :via => :scp
+			end
+		end
+
+		desc <<-DESC
+      Removes the 503 maintaince mode
+		DESC
+		task :enable, :roles => :web, :except => { :no_release => true } do
+			if previous_release
+				logger.important "Removing sites maintaince mode"
+				run "rm #{current_release}/maintainance.php"
+			end
+		end
+	end
+	
+
+	namespace :db do
+		task :backup, :except => { :no_release => true } do
+			logger.important "Backing up database"
+			run "mysqldump -u#{db_user} -p#{db_password} #{db_schema} > #{latest_release}/backup.sql"
+		end
+
+		task :restore, :except => { :no_release => true } do
+				logger.important "Restoring database"
+				run "mysql -u#{db_user} -p#{db_password} #{db_schema} < #{latest_release}/backup.sql"
+		end
+	end
+	
 end
 
-
-namespace :deploy do
-
-	task :composer_install do
-    	run "php /var/www/composer.phar install --working-dir #{latest_release}"
-	end
-
-	desc 'composer install'
-	task :composer_install do
-	on roles(:web) do
-	    within release_path do
-	        execute 'composer', 'install', '--no-dev', '--optimize-autoloader'
-	    end
-	end
-	end
-
-	after :updated, 'deploy:composer_install'
-
-end
+before "deploy:update_code", "deploy:web:disable"
+after "deploy:symlink", "deploy:db:backup"
+after "deploy:symlink", "deploy:migrate"
+after "deploy:symlink", "deploy:web:enable"
+after "rollback:cleanup", "deploy:db:restore"
+after "deploy:update", "deploy:cleanup" 
