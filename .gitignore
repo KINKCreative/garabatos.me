@@ -42,9 +42,6 @@ Thumbs.db
 assets/
 silverstripe-cache/
 
-
 app.yaml
-
 Capfile
-
-
+sftp-config.json
