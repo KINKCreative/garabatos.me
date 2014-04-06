@@ -37,3 +37,7 @@
 [submodule "js/reveal.js"]
 	path = js/reveal.js
 	url = https://github.com/hakimel/reveal.js
+[submodule "gridfieldeditablemanymanyextracolumns"]
+	path = gridfieldeditablemanymanyextracolumns
+	url = https://github.com/smindel/silverstripe-gridfieldeditablemanymanyextracolumns
+	
