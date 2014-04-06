@@ -14,6 +14,7 @@ set :ssh_options, {
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/srv/www/garabatos.me'
+set :deploy_via, :export
 
 # Default value for :scm is :git
 # set :scm, :git
