@@ -39,8 +39,8 @@
 	url = https://github.com/hakimel/reveal.js
 [submodule "gridfieldeditablemanymanyextracolumns"]
 	path = gridfieldeditablemanymanyextracolumns
-	url = https://github.com/smindel/silverstripe-gridfieldeditablemanymanyextracolumns
+	url = https://github.com/smindel/silverstripe-gridfieldeditablemanymanyextracolumns.git
 [submodule "js/simplecart-js"]
 	path = js/simplecart-js
-	url = https://github.com/wojodesign/simplecart-js
+	url = https://github.com/wojodesign/simplecart-js.git
 	
