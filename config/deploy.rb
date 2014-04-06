@@ -28,6 +28,15 @@ set :git_strategy, SubmoduleStrategy
 
 set :log_level, :info
 
+set :use_sudo, false
+
+set :user, "www-data"
+
+# desc "Change group to www-data"
+# task :chown_to_www-data, :roles => [ :app, :db, :web ] do
+#   sudo "chown -R #{user}:www-data #{deploy_to}"
+# end
+
 # Default value for :pty is false
 # set :pty, true
 
@@ -69,4 +78,13 @@ namespace :deploy do
 
 end
 
-
+desc "Check that we can access everything"
+    task :check_write_permissions do
+      on roles(:all) do |host|
+        if test("[ -w #{fetch(:deploy_to)} ]")
+          info "#{fetch(:deploy_to)} is writable on #{host}"
+        else
+          error "#{fetch(:deploy_to)} is not writable on #{host}"
+        end
+      end
+    end

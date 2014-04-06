@@ -22,6 +22,9 @@
 [submodule "GridFieldBulkEditingTools"]
 	path = GridFieldBulkEditingTools
 	url = https://github.com/colymba/GridFieldBulkEditingTools.git
+[submodule "GridFieldRelationHandler"]
+	path = GridFieldRelationHandler
+	url = https://github.com/simonwelsh/silverstripe-GridFieldRelationHandler
 [submodule "RestfulServer"]
 	path = RestfulServer
 	url = https://github.com/silverstripe/silverstripe-restfulserver.git
