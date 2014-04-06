@@ -22,9 +22,6 @@
 [submodule "GridFieldBulkEditingTools"]
 	path = GridFieldBulkEditingTools
 	url = https://github.com/colymba/GridFieldBulkEditingTools.git
-[submodule "GridFieldRelationHandler"]
-	path = GridFieldRelationHandler
-	url = https://github.com/simonwelsh/silverstripe-GridFieldRelationHandler
 [submodule "RestfulServer"]
 	path = RestfulServer
 	url = https://github.com/silverstripe/silverstripe-restfulserver.git
@@ -44,3 +41,6 @@
 	path = js/simplecart-js
 	url = https://github.com/wojodesign/simplecart-js.git
 	
+[submodule "GridFieldRelationHandler"]
+	path = GridFieldRelationHandler
+	url = https://github.com/simonwelsh/silverstripe-GridFieldRelationHandler
