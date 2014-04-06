@@ -41,8 +41,10 @@ Thumbs.db
 
 assets/
 silverstripe-cache/
-mysite/_config.php
-mysite/_db.php
 
 
 app.yaml
+
+Capfile
+
+

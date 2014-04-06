@@ -14,7 +14,7 @@ set :ssh_options, {
 
 # Default deploy_to directory is /var/www/my_app
 set :deploy_to, '/srv/www/garabatos.me'
-set :deploy_via, :export
+set :deploy_via, :copy
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -30,8 +30,8 @@ set :git_strategy, SubmoduleStrategy
 set :log_level, :info
 
 #set :use_sudo, false
-
-set :user, "www-data"
+set :use_sudo, true
+#set :user, "www-data"
 
 # desc "Change group to www-data"
 # task :chown_to_www-data, :roles => [ :app, :db, :web ] do
@@ -47,7 +47,7 @@ set :user, "www-data"
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-#set :linked_files, %w{mysite/_config}
+# set :linked_files, %w{mysite/_config.php}
 set :linked_dirs, %w{assets silverstripe-cache}
 
 # Default value for default_env is {}
