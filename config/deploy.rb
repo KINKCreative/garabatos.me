@@ -28,7 +28,7 @@ set :git_strategy, SubmoduleStrategy
 
 set :log_level, :info
 
-set :use_sudo, false
+#set :use_sudo, false
 
 set :user, "www-data"
 
