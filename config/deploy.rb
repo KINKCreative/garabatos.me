@@ -6,7 +6,8 @@ set :repo_url, 'https://github.com/KINKCreative/garabatos.me.git'
 
 
 set :ssh_options, {
-  forward_agent: true
+  forward_agent: true,
+  user: 'deploy'
 }
 
 # Default branch is :master
@@ -31,7 +32,8 @@ set :log_level, :info
 
 #set :use_sudo, false
 set :use_sudo, true
-#set :user, "www-data"
+set :user, "deploy"
+set :group, "www-data"
 
 # desc "Change group to www-data"
 # task :chown_to_www-data, :roles => [ :app, :db, :web ] do
@@ -77,15 +79,17 @@ namespace :deploy do
     end
   end
 
+  after :finishing, 'deploy:cleanup'
+
 end
 
 desc "Check that we can access everything"
-    task :check_write_permissions do
-      on roles(:all) do |host|
-        if test("[ -w #{fetch(:deploy_to)} ]")
-          info "#{fetch(:deploy_to)} is writable on #{host}"
-        else
-          error "#{fetch(:deploy_to)} is not writable on #{host}"
-        end
-      end
+task :check_write_permissions do
+  on roles(:all) do |host|
+    if test("[ -w #{fetch(:deploy_to)} ]")
+      info "#{fetch(:deploy_to)} is writable on #{host}"
+    else
+      error "#{fetch(:deploy_to)} is not writable on #{host}"
     end
+  end
+end
