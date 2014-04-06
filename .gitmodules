@@ -40,4 +40,7 @@
 [submodule "gridfieldeditablemanymanyextracolumns"]
 	path = gridfieldeditablemanymanyextracolumns
 	url = https://github.com/smindel/silverstripe-gridfieldeditablemanymanyextracolumns
+[submodule "js/simplecart-js"]
+	path = js/simplecart-js
+	url = https://github.com/wojodesign/simplecart-js
 	
