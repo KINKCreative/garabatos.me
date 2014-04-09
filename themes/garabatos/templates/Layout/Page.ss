@@ -1,8 +1,8 @@
 <section id="home">
-	$Form
 	<img src="$ThemeDir/images/Garabatos-Logo.png" alt="Garabatos" class="mainlogo" />
 	<p>Sketch designs with an essence.</p>
 	<p class="smaller">Use your arrow keys to navigate. Swipe left-right and up-down on mobile.<br/>At any time, press the <span class="label radius">ESC<span> key to jump to the cart.</p>
+	$Form
 	<p class="footer">
 		<small>Made with <i class="icon-heart"></i> in <strong>LA</strong></small>
 	</p>

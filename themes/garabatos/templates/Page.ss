@@ -56,7 +56,7 @@
         <h3>Menu</h3>
         <ul class="side-nav">
           <li><a href="#">Home</a></li>
-			<li><a href="javascript:;" class="collections_dropdown">Collections <i class="icon icon-angle-down"></i></a>
+			<li><a class="collections_dropdown">Collections <i class="icon icon-angle-down"></i></a>
 				<ul class="collections_submenu submenu" style="display:none;">
 					<% loop Collections %>
 					<li><a href="#/$URLSegment">$Title</a></li>
@@ -208,17 +208,17 @@
 				}
 			});
 
-			$(".collections_dropdown").click(function() {
-
-				$(".collections_submenu").slideToggle(500);
+			$(".collections_dropdown").click(function(e) {
+				e.preventDefault();
+				$(this).next().slideToggle(500);
 				$(this).find(".icon").toggleClass("icon-angle-down").toggleClass("icon-angle-up");
+				return false;
 			});
 
-			targetUrl = "";
 			menuicon = $(".left-off-canvas-toggle i");
 
 			$(".left-off-canvas-menu a").click(function(e) {
-				e.preventDefault();
+				e.preventDefault(); 
 				targetUrl = $(this).prop("href");
 				return false;
 			});
@@ -226,13 +226,13 @@
 
 			$("a.left-off-canvas-toggle").click(function(e) {
 				menuicon.toggleClass("icon-right-open").toggleClass("icon-left-open");
-				targetUrl = "";
+				/* targetUrl = ""; */
 			});
 			$("a.exit-off-canvas").click(function(e) {
 				menuicon.toggleClass("icon-right-open").toggleClass("icon-left-open");
-				if(targetUrl) {
+				/* if(targetUrl) {
 					window.location.href = targetUrl;
-				}
+				} */
 			});
 
 

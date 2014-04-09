@@ -7,11 +7,11 @@
 				$Image.SetWidth(700)
 				<div class="row">
 					<div class="medium-6 columns text-left">
-						<h3>$Title</h3>
+						<h3 class="hide-for-small-only">$Title</h3>
 					</div>
 					<div class="medium-6 columns text-right">
 						Qty. <input type="text" class="itemQuantity" value="1" maxlength="2" />
-						<a class="button round primary" data-dropdown="drop-{$ID}" class="dropdownClick">Add to Cart	</a>
+						<a class="button round primary" data-dropdown="drop-{$ID}" class="dropdownClick">Add to Cart</a>
 							<% if ProductVariations %>
 								<ul id="drop-{$ID}" class="f-dropdown dropup radius" data-dropdown-content>
 									<% loop ProductVariations %>

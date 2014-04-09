@@ -36,8 +36,8 @@ body {
 }
 
 ::selection {
-  color: white;
-  background: #000;
+  color: inherit !important;
+  background: rgba(0,0,0,0.1) !important;
   text-shadow: none; }
 
 /*********************************************
@@ -121,7 +121,7 @@ a:not(.image):hover {
 .cartItem-wrapper {
 	position: relative;
 	margin: 0 auto !important;
-	padding: 0 15% !important;
+	padding: 0 20% !important;
 }
 
 .mainlogo {
@@ -140,8 +140,10 @@ a:not(.image):hover {
 
 .cartItem-wrapper img {
   position: relative;
+  width: 100% !important;
   max-width: 100% !important;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+  height: auto !important;
 /*  display: block;*/
 /*  margin: 0 auto 1rem auto!important;*/
 }
@@ -263,6 +265,7 @@ input.itemQuantity {
 	background: rgba(255,255,255,0.1) !important;
 	color: #FFFFFF;
 	margin-bottom: 0;
+	padding: 0.3em 0.1em;
 }
 input.itemQuantity:focus {
 	background: #FFFFFF !important;
@@ -435,7 +438,7 @@ td.item-remove {
 		font-size: 1.2em !important;
 	}
 	input.itemQuantity {
-		max-width: 3em !important;
+		max-width: 2em !important;
 		font-size: 1em;
 	}
 	.cartItem-wrapper .details {
@@ -445,12 +448,15 @@ td.item-remove {
 		font-size: 0.9em !important;
 		line-height: 1.2em;
 	}
-	.details h3 {
-		font-size: 1.2em !important;
+	h3 {
+		font-size: 1.3em !important;
 	}
 	.text-left, .text-center, .text-right
 	{
 	   text-align: center !important; 
+	}
+	section {
+		top: -5em !important;
 	}
 
 }
@@ -498,7 +504,7 @@ td.item-remove {
 .left-off-canvas-toggle {
 	display: block;
 	tet-align:center !important;
-	font-size: 1.4em;
+	font-size: 1.2em;
 	line-height: 1em;
 	color: #FFF !important;
 }
@@ -510,7 +516,7 @@ a.exit-off-canvas {
 	background: rgba(0,0,0,0.2) !important;
 }
 aside.left-off-canvas-menu {
-	background: #222 !important;
+	background: #111 !important;
 }
 aside.left-off-canvas-menu h3 {
 	font-family: "Roboto Condensed", sans-serif !important;

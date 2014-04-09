@@ -2179,7 +2179,7 @@ meta.foundation-mq-topbar {
     clip: auto;
     position: absolute !important; } }
 .off-canvas-wrap {
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   position: relative;
   width: 100%;
   overflow: hidden; }
@@ -2188,7 +2188,7 @@ meta.foundation-mq-topbar {
     -webkit-overflow-scrolling: touch; }
 
 .inner-wrap {
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   position: relative;
   width: 100%;
   *zoom: 1;
@@ -2204,7 +2204,7 @@ meta.foundation-mq-topbar {
     clear: both; }
 
 .tab-bar {
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   background: #333333;
   color: white;
   height: 2.8125rem;
@@ -2281,7 +2281,7 @@ meta.foundation-mq-topbar {
     box-shadow: 0 0px 0 1px #b3b3b3, 0 7px 0 1px #b3b3b3, 0 14px 0 1px #b3b3b3; }
 
 .left-off-canvas-menu {
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   width: 15.625rem;
   top: 0;
   bottom: 0;
@@ -2299,10 +2299,11 @@ meta.foundation-mq-topbar {
   transform: translate3d(-100%, 0, 0);
   left: 0; }
   .left-off-canvas-menu * {
-    -webkit-backface-visibility: hidden; }
+    /*-webkit-backface-visibility: hidden;*/
+  }
 
 .right-off-canvas-menu {
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   width: 15.625rem;
   top: 0;
   bottom: 0;
@@ -2320,7 +2321,8 @@ meta.foundation-mq-topbar {
   transform: translate3d(100%, 0, 0);
   right: 0; }
   .right-off-canvas-menu * {
-    -webkit-backface-visibility: hidden; }
+    /*-webkit-backface-visibility: hidden;*/
+  }
 
 ul.off-canvas-list {
   list-style-type: none;
@@ -2352,7 +2354,7 @@ ul.off-canvas-list {
   -o-transform: translate3d(15.625rem, 0, 0);
   transform: translate3d(15.625rem, 0, 0); }
 .move-right .exit-off-canvas {
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   transition: background 300ms ease;
   cursor: pointer;
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
@@ -2377,7 +2379,7 @@ ul.off-canvas-list {
   -o-transform: translate3d(-15.625rem, 0, 0);
   transform: translate3d(-15.625rem, 0, 0); }
 .move-left .exit-off-canvas {
-  -webkit-backface-visibility: hidden;
+  /*-webkit-backface-visibility: hidden;*/
   transition: background 300ms ease;
   cursor: pointer;
   box-shadow: -4px 0 4px rgba(0, 0, 0, 0.5), 4px 0 4px rgba(0, 0, 0, 0.5);
