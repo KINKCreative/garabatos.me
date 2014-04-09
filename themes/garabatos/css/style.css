@@ -451,6 +451,8 @@ td.item-remove {
 }
 section {
 	padding: 0 !important;
+	margin: auto 0 !important;
+	top: -40% !important;
 }
 
 @media only screen and (max-width: 40.063em) {
@@ -519,10 +521,10 @@ section {
 	height: 100%;
 	width: 100%;
 }
-/*.slides {
+.slides {
 	width: 98% !important;
 	height: 98% !important;
-}*/
+}
 
 .btnwrap {
 	position: absolute;
@@ -565,7 +567,7 @@ aside.left-off-canvas-menu h3 {
 .navicon {
 	position: static !important;
 	display: inline-block !important;
-	margin-bottom: 1em;
+	bottom: 1em;
 	left: 50%;
 	margin-left: -1em;
 	/*background: rgba(0,0,0,0.1);*/
