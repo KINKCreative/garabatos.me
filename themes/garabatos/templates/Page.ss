@@ -44,13 +44,28 @@
 
 	<body>
 		
+<div class="off-canvas-wrap" data-offcanvas>
+<div class="inner-wrap">
+
+    <a class="show-for-small-only left-off-canvas-toggle" href="#" ><i class="icon-right-open"></i></a>
+
+    <!-- Off Canvas Menu -->
+    <aside class="left-off-canvas-menu">
+        <!-- whatever you want goes here -->
+        <ul class="side-nav">
+          <li><a href="#">Item 1</a></li>
+        ...
+        </ul>
+    </aside>
+
+
 		<a href="#" class="logoWrap"><img src="$ThemeDir/images/Garabatos-Logo.png" class="logo" /></a>
 
 		<div class="nav cart-nav">
 			<i class="icon-basket-alt"></i></a> <a class="simpleCart_total orange" href="#/cart" ></a> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items<a href="javascript:;" class="simpleCart_empty orange" title="Empty trash"><i class="icon-trash"></i> </a>)
 		</div>
 
-		<ul class="nav side-nav">
+		<ul class="nav side-nav hide-for-small">
 			<li><a href="#">Home</a></li>
 			<li><a href="javascript:;" class="collections_dropdown">Collections <i class="icon icon-angle-down"></i></a>
 				<ul class="collections_submenu submenu" style="display:none;">
@@ -74,6 +89,12 @@
 			</div>
 
 		</div>
+
+	<a class="exit-off-canvas"></a>
+
+</div>
+</div>
+
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 		<script src="js/foundation/js/foundation.min.js"></script>
 		<script src="js/reveal.js/lib/js/head.min.js"></script>
