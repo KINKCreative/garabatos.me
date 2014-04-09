@@ -217,22 +217,17 @@
 
 			menuicon = $(".left-off-canvas-toggle i");
 
-			$(".left-off-canvas-menu a").click(function(e) {
+			$(".left-off-canvas-menu a.collections_dropdown").click(function(e) {
 				e.preventDefault(); 
-				targetUrl = $(this).prop("href");
 				return false;
 			});
 
 
 			$("a.left-off-canvas-toggle").click(function(e) {
 				menuicon.toggleClass("icon-right-open").toggleClass("icon-left-open");
-				/* targetUrl = ""; */
 			});
 			$("a.exit-off-canvas").click(function(e) {
 				menuicon.toggleClass("icon-right-open").toggleClass("icon-left-open");
-				/* if(targetUrl) {
-					window.location.href = targetUrl;
-				} */
 			});
 
 

@@ -395,9 +395,9 @@ td.item-remove {
 }
 
 .f-dropdown {
+	position: relative !important;
 	list-style-type: none !important;
 	min-width: 100% !important;
-
 }
 .dropup {
 	margin: 0 !important;
