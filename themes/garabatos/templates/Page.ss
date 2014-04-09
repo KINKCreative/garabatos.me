@@ -132,9 +132,14 @@
 				progress: true,
 				history: true,
 				center: true,
+				width: "100%",
+				height: "100%",
+				margin: 0.05,
 
-				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
-				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+				theme: Reveal.getQueryHash().theme, 
+				transition: 'default',
+				minScale: 0.5,
+				maxScale: 0.9,
 
 				// Parallax scrolling
 				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',

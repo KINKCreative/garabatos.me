@@ -31,8 +31,6 @@ body {
   font-weight: 300;
   letter-spacing: -0.02em;
   color: #eeeeee;
-  width: 100% !important;
-  height: 100% !important;
 }
 
 ::selection {
@@ -291,7 +289,6 @@ input.itemQuantity:focus {
 	font-weight: 700 !important;
 }
 .cartwrap {
-	max-width: 75%;
 	margin: auto auto !important;
 }
 .cartwrap table {
@@ -449,9 +446,9 @@ td.item-remove {
 @media only screen and (max-width: 40.063em) {
 
 	aside.controls { display: none !important; }
-	section div, section {
+	/*section div, section {
 		font-size: 1.2em !important;
-	}
+	}*/
 	input.itemQuantity {
 		max-width: 2em !important;
 		font-size: 1em;
@@ -464,15 +461,24 @@ td.item-remove {
 		line-height: 1.2em;
 	}
 	h3 {
-		font-size: 1.3em !important;
+		/*font-size: 1.3em !important;*/
 	}
 	.text-left, .text-center, .text-right
 	{
 	   text-align: center !important; 
 	}
-	section {
-		top: -5em !important;
-	}
+	#cart .item-name {
+		width: 50%;
+		overflow: hidden !important;
+		white-space: nowrap !important;
+		text-overflow: ellipsis !important;
+   }
+   #cart .item-price {
+   	display:none !important;
+   }
+   #cart .simpleCart_remove {
+   		content: "X" !important;
+   }
 
 }
 
