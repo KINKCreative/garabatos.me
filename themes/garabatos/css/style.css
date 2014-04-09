@@ -94,7 +94,11 @@ a:not(.image):hover {
   -moz-transition: all .2s linear;
   -ms-transition: all .2s linear;
   -o-transition: all .2s linear;
-  transition: all .2s linear; }
+  transition: all .2s linear;
+  width: 100%;
+  height: auto;
+  position: relative !important;
+}
 
 .reveal a:hover img {
   /*background: rgba(255, 255, 255, 0.2);*/
@@ -112,8 +116,6 @@ a:not(.image):hover {
 .logo {
  margin:15px !important;
  height: 50px;
-}
-section {
 }
 .cartItem-wrapper {
 	position: relative;
@@ -135,12 +137,7 @@ section {
 	}
 }
 
-.cartItem-wrapper img {
-  position: relative;
-  max-width: 100% !important;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
-/*  display: block;*/
-/*  margin: 0 auto 1rem auto!important;*/
+@media only screen and (orientation: landscape) {
 }
 
 /*********************************************
@@ -260,7 +257,7 @@ input.itemQuantity {
 	background: rgba(255,255,255,0.1) !important;
 	color: #FFFFFF;
 	margin-bottom: 0;
-	padding: 0.5em 1em !important;
+	padding: 0.5em 0.2em !important;
 }
 input.itemQuantity:focus {
 	background: #FFFFFF !important;
@@ -454,14 +451,6 @@ td.item-remove {
 	{
 	   text-align: center !important; 
 	}
-
-}
-
-p.smaller {
-	font-size: 0.8em;
-}
-p.footer {
-	margin-top: 2em;
 }
 
 @media only screen and  (min-width:40.064em) {
@@ -475,6 +464,15 @@ p.footer {
 	}
 }
 
+p.smaller {
+	font-size: 0.8em;
+}
+p.footer {
+	margin-top: 2em;
+}
+.reveal section img {
+	max-width: 100%;
+}
 section:not(.present) {
 	display: none !important;
 }
