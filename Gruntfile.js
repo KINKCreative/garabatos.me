@@ -11,21 +11,24 @@ module.exports = function(grunt) {
   // Project configuration
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
+    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+            '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
+            '* http://<%= pkg.homepage %>/\n' +
+            '* Copyright (c) <%= grunt.template.today("yyyy") %> ' +
+            '<%= pkg.author.name %>; Licensed MIT */',
     uglify: {
       options: {
-        banner: '<%= meta.banner %>\n'
+        banner: '<%= banner %>\n'
       },
       build: {
         files: {
           'themes/garabatos/js/application.min.js': 
           [
+            "js/reveal.js/js/reveal.js",
             'js/foundation/js/vendor/modernizr.js',
-            'js/foundation/js/vendor/jquery.js',
-            "js/foundation/js/foundation.min.js",
-            "js/reveal.js/lib/js/head.min.js",
-            "js/reveal.js/js/reveal.min.js",
-            "js/simplecart-js/simpleCart.min.js",
+            "js/foundation/js/foundation.js",
+            "js/reveal.js/lib/js/head.js",
+            "js/simplecart-js/simpleCart.js",
             "js/src/application.js"
           ]
         }
@@ -37,12 +40,11 @@ module.exports = function(grunt) {
         files: {
           'themes/garabatos/css/style.min.css': 
           [ 
-            'themes/garabatos/css/style.css' ,
+            "js/reveal.js/css/reveal.css",
             "js/foundation/css/foundation.css",
-            "js/reveal.js/css/reveal.min.css",
-            "$themes/garabatos/css/style.css",
             "js/fontello/css/fontello.css",
-            "js/fontello/css/animation.css"
+            "js/fontello/css/animation.css",
+            "themes/garabatos/css/style.css",
           ]
         }
       }
@@ -61,14 +63,16 @@ module.exports = function(grunt) {
         eqnull: true,
         browser: true,
         expr: true,
+        jquery: true,
         globals: {
+          $: false,
           head: false,
           module: false,
           console: false,
           unescape: false
         }
       },
-      files: [ 'Gruntfile.js', 'themes/garabatos/js/application.min.js' ]
+      files: [ 'Gruntfile.js' /*, 'themes/garabatos/js/application.min.js' */]
     },
 
     connect: {
@@ -96,11 +100,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
   grunt.loadNpmTasks( 'grunt-contrib-sass' );
-  grunt.loadNpmTasks( 'grunt-contrib-connect' );
-  grunt.loadNpmTasks( 'grunt-zip' );
+  // grunt.loadNpmTasks( 'grunt-contrib-connect' );
+  // grunt.loadNpmTasks( 'grunt-zip' );
 
   // Default task
-  grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify', 'qunit' ] );
+  grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify' ] );
 
   // Theme task
   // grunt.registerTask( 'themes', [ 'sass' ] );

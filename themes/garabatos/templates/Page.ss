@@ -14,7 +14,28 @@
 
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
+		<link rel="stylesheet" href="js/foundation/css/foundation.css" />
+		<link rel="stylesheet" href="js/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="$ThemeDir/css/style.css" id="theme">
+
+		<link rel="stylesheet" href="js/fontello/css/fontello.css">
+    	<link rel="stylesheet" href="js/fontello/css/animation.css">
+
+		<!-- For syntax highlighting -->
+		<!-- <link rel="stylesheet" href="js/reveal.js/lib/css/zenburn.css"> -->
+
 		<script src="js/foundation/js/vendor/modernizr.js"></script>
+
+		<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+		<script>
+			if( window.location.search.match( /print-pdf/gi ) ) {
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = 'css/print/pdf.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+			}
+		</script>
 
 		<!--[if lt IE 9]>
 		<script src="js/reveal.js/lib/js/html5shiv.js"></script>
@@ -26,14 +47,25 @@
 <div class="off-canvas-wrap" data-offcanvas>
 <div class="inner-wrap">
 
-    <a class="show-for-small-only left-off-canvas-toggle" href="#" ><i class="icon-right-open"></i></a>
+    <div class="btnwrap show-for-small-only">
+    	<a class="left-off-canvas-toggle" href="#" ><i class="icon-right-open"></i></a>
+    </div>
 
     <!-- Off Canvas Menu -->
     <aside class="left-off-canvas-menu">
-        <!-- whatever you want goes here -->
+        <h3>Menu</h3>
         <ul class="side-nav">
-          <li><a href="#">Item 1</a></li>
-        ...
+          <li><a href="#">Home</a></li>
+			<li><a href="javascript:;" class="collections_dropdown">Collections <i class="icon icon-angle-down"></i></a>
+				<ul class="collections_submenu submenu" style="display:none;">
+					<% loop Collections %>
+					<li><a href="#/$URLSegment">$Title</a></li>
+					<% end_loop %>
+				</ul>
+			</li>
+			<li><a href="#/order">How to order</a></li>
+			<li><a href="#/contact">Contact</a></li>
+			<li><a href="#/cart">Cart</a></li>
         </ul>
     </aside>
 
@@ -74,12 +106,137 @@
 </div>
 </div>
 
-		<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-		<!-- <script src="js/foundation/js/foundation.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/foundation/js/foundation.min.js"></script>
 		<script src="js/reveal.js/lib/js/head.min.js"></script>
 		<script src="js/reveal.js/js/reveal.min.js"></script>
-		<script src="js/simplecart-js/simpleCart.min.js"></script> -->
-		<script src="js/src/application.min.js"></script>
+		<script src="js/simplecart-js/simpleCart.min.js"></script>
+
+		<script>
+
+			$(document).foundation();
+
+			simpleCart({
+			    checkout: {
+			      type: "PayPal",
+			      email: "info@kinkcreative.com"
+			    },
+			    cartStyle: "table",
+			    shippingCustom: function(){ 
+			    	return 5 + simpleCart.quantity()*2;
+			    }
+			  });
+			
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+				transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+				// Parallax scrolling
+				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+				//parallaxBackgroundSize: '2100px 900px',
+
+				// Optional libraries used to extend on reveal.js
+				dependencies: [
+					{ src: 'js/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'js/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'js/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'js/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+					{ src: 'js/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+				]
+			});
+
+			Reveal.configure({
+				keyboard: {
+					27: function() { window.location.href("#/cart") }
+				}
+			});
+
+			/* window.addEventListener("mousedown", handleClick, false);
+			window.addEventListener("contextmenu", function(e) { e.preventDefault(); }, false);
+			 
+			function handleClick(e) {
+				e.preventDefault();
+				if(e.button === 0) Reveal.next(); 
+				if(e.button === 2) Reveal.prev(); 
+			} */
+
+			var dd = false;
+			$(".dropdownClick").click(function(e) {
+				//e.preventDefault();
+				dd = true;
+			});
+
+			$(".addClick").click(function() {
+				if(!dd) {
+					addItem($(this));
+				}
+				else {
+					dd=false;
+				}
+			});
+			$(".addItem").click(function() {
+				addItem($(this));
+			});
+
+			function addItem(element) {
+				title = element.data("title") + " (" + element.data("variation") + ")";
+				sku = element.data("sku");
+				price = element.data("price");
+				quantity = element.closest(".cartItem-wrapper").find(".itemQuantity").val();
+				simpleCart.add({ 
+				    name: title,
+				    price: price,
+				    sku: sku ,
+				    quantity: quantity
+				});
+			}
+
+			$(".checkbox").change(function() {
+				if($(this).prop("checked")==true) {
+					simpleCart.data[taxRate] = 0.08;
+					$(".simpleCart_tax").fadeIn();
+				}
+				else {
+					simpleCart.data[taxRate] = 0;
+					$(".simpleCart_tax").fadeOut();	
+				}
+			});
+
+			$(".collections_dropdown").click(function() {
+
+				$(".collections_submenu").slideToggle(500);
+				$(this).find(".icon").toggleClass("icon-angle-down").toggleClass("icon-angle-up");
+			});
+
+			targetUrl = "";
+			menuicon = $(".left-off-canvas-toggle i");
+
+			$(".left-off-canvas-menu a").click(function(e) {
+				e.preventDefault();
+				targetUrl = $(this).prop("href");
+				return false;
+			});
+
+
+			$("a.left-off-canvas-toggle").click(function(e) {
+				menuicon.toggleClass("icon-right-open").toggleClass("icon-left-open");
+				targetUrl = "";
+			});
+			$("a.exit-off-canvas").click(function(e) {
+				menuicon.toggleClass("icon-right-open").toggleClass("icon-left-open");
+				if(targetUrl) {
+					window.location.href = targetUrl;
+				}
+			});
+
+
+		</script>
 
 		<!-- <aside class="mycontrols">
 			<div class="navigate-up"><i class="icon-up-open"></i></div>

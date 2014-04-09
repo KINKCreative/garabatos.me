@@ -1,12 +1,27 @@
 {
   "name": "Garabatos.me",
   "version": "0.1.0",
+  "homepage": "http://designcollective.io",
+   "author": {
+        "name": "Klemen Novak",
+        "email": "klemen@kinkcreative.com",
+        "url": "http://www.kinkcreative.com"
+    },
   "description": "Garabatos Grunt Hub",
   "repository": {
     "type": "git",
     "url": "https://github.com/KINKCreative/garabatos.me.git"
   },
-  "devDependencies": {
-  	"grunt": "~0.4.1"
-  }
+   "devDependencies" : {
+        "grunt" :                       "~0.4.1",
+        "grunt-contrib-cssmin":         "*",
+        "grunt-contrib-sass":           "*",
+        "grunt-contrib-uglify":         "*",
+        "grunt-contrib-watch":          "*",
+        "grunt-contrib-qunit":          "*",
+        "grunt-contrib-jshint":         "~0.6.0",
+        "grunt-cssc":                   "*",
+        "grunt-htmlhint":               "*",
+        "matchdep":                     "*"
+    }
 }

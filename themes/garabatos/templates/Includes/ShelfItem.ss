@@ -16,7 +16,7 @@
 								<ul id="drop-{$ID}" class="f-dropdown dropup radius" data-dropdown-content>
 									<% loop ProductVariations %>
 									  <li class="simpleCart_shelfItem">
-									  	<a href="javascript:;" class="addItem" data-title="$Title" data-price ="$DefaultPrice" data-variation="$Title"><span class="itemname">$Title</span> (<strong>$DefaultPrice.Nice</strong>) <i class=" icon-basket-alt right"></i></a>
+									  	<a href="javascript:;" class="addItem" data-title="$Up.Title" data-price ="$DefaultPrice" data-sku="{$Up.SKUBase}-{$SKUExtension}" data-variation="$Title"><span class="itemname">$Title</span> (<strong>$DefaultPrice.Nice</strong>) <i class=" icon-basket-alt right"></i></a>
 									  </li>
 								  	<% end_loop %>
 								</ul>
