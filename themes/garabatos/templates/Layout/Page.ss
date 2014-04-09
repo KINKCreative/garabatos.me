@@ -33,7 +33,7 @@
 	<p>
 		<h4>We love you</h4>
 		<p>Order information here. Pick whatever you want. We ship it.</p>
-		</h4>Questions?</h4>
+		<h4>Questions?</h4>
 		<p>Shoot us an email at <a href="mailto:info@garabatos.me">info@garabatos.me</a></p>
 	</p>
 </section>

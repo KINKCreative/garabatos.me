@@ -61,4 +61,18 @@ class Product extends DataObject {
         return $fields;
     }
 
+    public function NextItem() {
+        $n = $this->Collection()->Products()->where("Product.Created > '$this->Created'")->first();
+        if($n) {
+            return $n;
+        }
+    }
+
+    public function FirstItem() {
+        $f = $this->Collection()->Products()->first();
+        if($f) {
+            return $f;
+        }
+    }
+
 }

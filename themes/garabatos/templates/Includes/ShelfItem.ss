@@ -1,5 +1,5 @@
 <section id="$URLSegment">
-	<h3>$Collection.Title - <strong>$Title</strong></h3>
+	<h4>$Collection.Title</h4>
 	
 	<div class="cartItem-wrapper">
 		<div class="row">
@@ -7,7 +7,7 @@
 				$Image.SetWidth(700)
 				<div class="row">
 					<div class="medium-6 columns text-left">
-						<h3 class="hide-for-small-only">$Title</h3>
+						<h3>$Title</h3>
 					</div>
 					<div class="medium-6 columns text-right">
 						Qty. <input type="text" class="itemQuantity" value="1" maxlength="2" />
@@ -27,4 +27,9 @@
 			</div>
 		</div>
 	</div>
+	<% if Last %>
+		<div class="navicon"><a href="#/$FirstItem.URLSegment"><i class="icon-angle-up"></i></a></div>
+	<% else %>
+		<div class="navicon"><a href="#/$NextItem.URLSegment"><i class="icon-angle-down"></i></a></div>
+	<% end_if %>
 </section>
