@@ -37,7 +37,7 @@ body {
 
 ::selection {
   color: inherit !important;
-  background: rgba(0,0,0,0.1) !important;
+  background: rgba(0,0,0,0) !important;
   text-shadow: none; }
 
 /*********************************************
@@ -258,6 +258,7 @@ input.itemQuantity {
 	max-width: 1.8em;
 	text-align: center;
 	font-weight: 700;
+	font-family: "Roboto Condensed", _sans-serif !important;
 	border: none;
 	-webkit-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
 	-moz-box-shadow: inset 0px 0px 5px 0px rgba(0,0,0,0.5);
@@ -279,6 +280,7 @@ input.itemQuantity:focus {
 .simpleCart_shelfItem .addItem {
 	white-space: nowrap !important;
 	overflow: hidden !important;
+	padding: 0.2em 0.3em 0.2em 0.4em;
 }
 
 #cart {
@@ -395,17 +397,30 @@ td.item-remove {
 }
 
 .f-dropdown {
-	position: relative !important;
 	list-style-type: none !important;
 	min-width: 100% !important;
 }
 .dropup {
 	margin: 0 !important;
 	top: auto !important;
-	bottom: 2.4em;
+	bottom: 2em !important;
+	box-shadow: 0px 3px 5px rgba(0,0,0,0.3);
+}
+.dropup.open {
+	left: 0 !important;
+}
+.f-dropdown span.dd-buynow {
+	display: inline-block;
+	padding: 0.2em;
+	background: #f53d09 !important;
+	color: #FFF;
+	border-radius: 10em;
+	-moz-border-radius: 10em;
+	-webkit-border-radius: 10em;
+	float: right;
 }
 .f-dropdown li a {
-	font-size: 1.2rem !important;
+	font-size: 1.3rem !important;
 	line-height: 1.45rem;
 }
 .f-dropdown li a:hover {
@@ -461,6 +476,7 @@ td.item-remove {
 
 }
 
+/* TEXT ALIGNMENT */
 
 .text-left, .text-center, .text-right
 {
