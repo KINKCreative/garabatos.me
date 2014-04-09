@@ -495,3 +495,7 @@ td.item-remove {
 a.left-off-canvas-toggle i {
 	font-size: 1em !important;
 }
+
+p.smaller {
+	font-size: 0.8em;
+}
