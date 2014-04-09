@@ -34,14 +34,14 @@
 		<h4>We love you</h4>
 		<p>Order information here. Pick whatever you want. We ship it.</p>
 		<h4>Questions?</h4>
-		<p>Shoot us an email at <a href="mailto:info@garabatos.me">info@garabatos.me</a></p>
+		<p>Shoot us an email at<br/><a href="mailto:info@garabatos.me">info@garabatos.me</a></p>
 	</p>
 </section>
 
 <section id="contact">
 	<h2>How to contact us</h2>
-	<p>Call us at <strong><a href="tel:2133949559">(213) 394-9559</a></strong></p>
-	<p>Shoot us an email at <a href="mailto:info@garabatos.me">info@garabatos.me</a></p>
+	<p>Call us at<br/><strong><a href="tel:2133949559">(213) 394-9559</a></strong></p>
+	<p>Shoot us an email at<br/><a href="mailto:info@garabatos.me">info@garabatos.me</a></p>
 </section>
 
 <section id="cart">
