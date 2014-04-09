@@ -44,3 +44,6 @@
 [submodule "GridFieldRelationHandler"]
 	path = GridFieldRelationHandler
 	url = https://github.com/simonwelsh/silverstripe-GridFieldRelationHandler
+[submodule "gridfield-betterbuttons"]
+	path = gridfield-betterbuttons
+	url = https://github.com/unclecheese/silverstripe-gridfield-betterbuttons

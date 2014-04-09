@@ -4,7 +4,8 @@ class ProductVariation extends DataObject {
 	
 	private static $db = array(
 		'Title' => 'Varchar(255)',
-		'DefaultPrice' => 'Currency'
+		'DefaultPrice' => 'Currency',
+        'SKUExtension' => 'Varchar(16)'
 	);
 
 	private static $belongs_many_many = array(
@@ -13,8 +14,11 @@ class ProductVariation extends DataObject {
 
     private static $summary_fields = array(
         'Title',
-        'DefaultPrice'
+        'DefaultPrice',
+        'SKUExtension'
     );
+
+    private static $default_sort = "DefaultPrice ASC";
 
     function getCMSFields() {
         $fields = parent::getCMSFields();

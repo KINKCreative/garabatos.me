@@ -6,9 +6,9 @@ class Product extends DataObject {
 
 	private static $db = array(
 		'Title' => 'Varchar(255)',
-        'SKU' => 'Varchar(16)',
+        'SKUBase' => 'Varchar(16)',
 		'Description' => 'Text',
-		'QuickPrice' => 'Currency'
+		//'QuickPrice' => 'Currency'
 	);
 
 	private static $has_one = array(
@@ -60,6 +60,5 @@ class Product extends DataObject {
         }
         return $fields;
     }
-
 
 }

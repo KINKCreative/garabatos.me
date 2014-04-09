@@ -30,3 +30,10 @@ Director:
 Collection:
   extensions:
     - Linkable
+
+
+BetterButtonsActions:
+  create:
+    Button_SaveAndAdd: true
+    Button_Save: true
+    Button_SaveAndClose: true

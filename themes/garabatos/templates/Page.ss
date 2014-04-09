@@ -94,9 +94,7 @@
 			    	return 5 + simpleCart.quantity()*2;
 			    }
 			  });
-
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
+			
 			Reveal.initialize({
 				controls: true,
 				progress: true,
@@ -119,6 +117,12 @@
 					{ src: 'js/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
 					{ src: 'js/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
 				]
+			});
+
+			Reveal.configure({
+				keyboard: {
+					27: function() { window.location.href("#/cart") }
+				}
 			});
 
 			/* window.addEventListener("mousedown", handleClick, false);

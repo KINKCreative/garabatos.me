@@ -1,5 +1,6 @@
 /* @override 
-	http://garabatos.dev/index.php/js/reveal.js/css/theme/default.css */
+	http://garabatos.dev/index.php/js/reveal.js/css/theme/default.css
+	http://garabatos.dev/themes/garabatos/css/style.css */
 
 @import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,700);
 /**
@@ -271,6 +272,8 @@ input.itemQuantity:focus {
 
 .simpleCart_shelfItem {
 	white-space: nowrap;
+	overflow: hidden !important;
+	max-width: 100% !important;
 }
 
 #cart {
@@ -385,13 +388,16 @@ td.item-remove {
 .f-dropdown {
 	list-style-type: none !important;
 	margin: 0 !important;
+	top: auto !important;
+	bottom: 2.8em;
+	min-width: 50% !important;
 /*	border-radius: 5px;
 	-webkit-border-radius: 5px;*/
 }
 .f-dropdown li a {
 	font-size: 1.2rem !important;
-	line-height: 1.5rem;
-	padding: 0 0.6em !important;
+	line-height: 1.45rem;
+	/*padding: 0 0.6em !important;*/
 }
 .f-dropdown li a:hover {
 	color: #000000;
@@ -425,11 +431,31 @@ td.item-remove {
 		max-width: 3em !important;
 	}
 	.cartItem-wrapper .details {
-		font-size: 1.4em !important;
-		line-height:2.6em !important;
+/*		font-size: 1.4em !important;*/
+		line-height:2.3em !important;
 	}
 	.cartItem-wrapper .details .f-dropdown li a {
-		font-size: 1.4em !important;
+/*		font-size: 1em !important;*/
+	}
+	section div {
+		font-size: 1.2em !important;
 	}
 
+}
+
+
+.text-left, .text-center, .text-right
+{
+   text-align: center;
+}
+@media only screen and (min-width: 641px)
+{
+   .text-left
+   {
+      text-align: left;
+   }
+   .text-right
+   {
+      text-align: right;
+   }
 }

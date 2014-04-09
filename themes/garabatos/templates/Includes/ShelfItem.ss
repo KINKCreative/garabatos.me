@@ -5,26 +5,25 @@
 		<div class="row">
 			<div class="large-12 columns details">
 				$Image.SetWidth(700)
-				<div class="left">
-					$Title (<% if ProductVariations %>from <% end_if %><strong>{$QuickPrice.Nice}</strong>)
+				<div class="row">
+					<div class="medium-6 columns text-left">
+						$Title (<% if ProductVariations %>from <% end_if %><strong>{$QuickPrice.Nice}</strong>)
+					</div>
+					<div class="medium-6 columns text-right">
+						Qty. <input type="text" class="itemQuantity" value="1" />
+						<a class="button split round primary" data-dropdown="drop-{$ID}" class="dropdownClick">Add to Cart <i class=" icon-basket-alt"></i>	</a>
+							<% if ProductVariations %>
+								<ul id="drop-{$ID}" class="f-dropdown radius" data-dropdown-content>
+									<% loop ProductVariations %>
+									  <li class="simpleCart_shelfItem">
+									  	<a href="javascript:;" class="addItem" data-title="$Title" data-price ="$DefaultPrice" data-variation="$Title"><span class="itemname">$Title</span> (<strong>$DefaultPrice.Nice</strong>)</a>
+									  </li>
+								  	<% end_loop %>
+								</ul>
+							<% else %>
+							<% end_if %>
+					</div>
 				</div>
-				<div class="right">
-					Qty. <input type="text" class="itemQuantity" value="1" />
-					<a class="button split round primary addClick" data-title="$Title" data-price="5" data-variation="Postcard 5x7">Add to Cart 
-						<% if ProductVariations %>
-							<span data-dropdown="drop-{$ID}" class="dropdownClick"></span></a><br>
-							<ul id="drop-{$ID}" class="f-dropdown radius" data-dropdown-content>
-								<% loop ProductVariations %>
-								  <li class="simpleCart_shelfItem">
-								  	<a href="javascript:;" class="addItem" data-title="$Title" data-price ="$DefaultPrice" data-variation="$Title"><span class="itemname">$Title</span> (<strong>$DefaultPrice.Nice</strong>)</a>
-								  </li>
-							  	<% end_loop %>
-							</ul>
-						<% else %>
-							</a>
-						<% end_if %>
-				</div>
-
 			</div>
 		</div>
 	</div>

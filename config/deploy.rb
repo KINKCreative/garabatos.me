@@ -49,7 +49,7 @@ set :group, "www-data"
 # Default value for linked_dirs is []
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
-# set :linked_files, %w{mysite/_config.php}
+set :linked_files, %w{mysite/_config.php}
 set :linked_dirs, %w{assets silverstripe-cache}
 
 # Default value for default_env is {}
