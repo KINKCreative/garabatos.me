@@ -2,25 +2,27 @@
 	<h4>$Collection.Title</h4>
 	
 	<div class="cartItem-wrapper">
-		<div class="row">
-			<div class="large-12 columns details">
-				$Image.SetWidth(700)
-				<input type="hidden" class="itemQuantity" value="1" maxlength="2" />
-				<div class="floatingbuy">
-					<a class="button round primary dropdownClick" data-dropdown="drop-{$ID}"><i class=" icon-basket-alt"></i></a>
-						<% if ProductVariations %>
-							<ul id="drop-{$ID}" class="f-dropdown dropup radius" data-dropdown-content>
-								<% loop ProductVariations %>
-								  <li class="simpleCart_shelfItem">
-								  	<a href="javascript:;" class="addItem" data-title="$Up.Title" data-price ="$DefaultPrice" data-sku="{$Up.SKUBase}-{$SKUExtension}" data-variation="$Title"><span class="itemname">$Title</span> (<strong>$DefaultPrice.Nice</strong>) <span class="dd-buynow"><i class=" icon-basket-alt right"></i></span></a>
-								  </li>
-							  	<% end_loop %>
-							</ul>
-						<% else %>
-						<% end_if %>
+				<div class="details">
+					<style>
+						.details {
+							background-image: url($Image.SetWidth(700).URL);
+						}
+					</style>
+					<input type="hidden" class="itemQuantity" value="1" maxlength="2" />
+					<div class="floatingbuy">
+						<a class="button round primary dropdownClick" data-dropdown="drop-{$ID}"><i class=" icon-basket-alt"></i></a>
+							<% if ProductVariations %>
+								<ul id="drop-{$ID}" class="f-dropdown dropup radius" data-dropdown-content>
+									<% loop ProductVariations %>
+									  <li class="simpleCart_shelfItem">
+									  	<a href="javascript:;" class="addItem" data-title="$Up.Title" data-price ="$DefaultPrice" data-sku="{$Up.SKUBase}-{$SKUExtension}" data-variation="$Title"><span class="itemname">$Title</span> (<strong>$DefaultPrice.Nice</strong>) <span class="dd-buynow"><i class=" icon-basket-alt right"></i></span></a>
+									  </li>
+								  	<% end_loop %>
+								</ul>
+							<% else %>
+							<% end_if %>
+					</div>
 				</div>
-			</div>
-		</div>
 	</div>
 	<% if Last %>
 		<div class="navicon"><a href="#/$FirstItem.URLSegment"><i class="icon-angle-up"></i></a></div>
