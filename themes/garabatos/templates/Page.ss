@@ -124,7 +124,16 @@
 			    cartStyle: "table",
 			    shippingCustom: function(){ 
 			    	return 5 + simpleCart.quantity()*2;
-			    }
+			    },
+			    cartColumns: [
+			        { attr: "name", label: "Name"},
+			        { view: "currency", attr: "price", label: "Price"},
+			        { view: "decrement", text: '<i class="icon-minus-circled"></i>', label: false},
+			        { attr: "quantity", label: "Qty"},
+			        { view: "increment", text: '<i class="icon-plus-circled"></i>', label: false},
+			        { view: "currency", attr: "total", label: "SubTotal" },
+			        { view: "remove", text: '<i class="icon-cancel-circled"></i>', label: false }
+			    ],
 			  });
 			
 			Reveal.initialize({

@@ -276,10 +276,11 @@ input.itemQuantity:focus {
 	font-weight: 700 !important;
 }
 
-.simpleCart_shelfItem .addItem {
+.addItem {
 	white-space: nowrap !important;
 	overflow: hidden !important;
 	padding: 0.3em 0.3em 0.3em 0.6em;
+	font-weight: normal;
 }
 
 #cart {
@@ -301,44 +302,29 @@ input.itemQuantity:focus {
 	background: none;
 }
 #cart td, #cart th {
-	padding: 0.3rem 0.5rem;
+/*	padding: 0.3rem 0.5rem;*/
 	color: #FFF;
 }
 #cart td {
+	padding: 0.3em;
 	background: rgba(0,0,0,0.4);
 	color: #FFF; 
 }
 #cart .item-quantity {
-	max-width: 1.5rem;
+	max-width: 1.5em;
 	text-align: center;
 	font-weight: 700;
 }
 #cart .item-decrement {
 	text-align: right;
 }
-#cart .item-increment {
+#cart .item-increment, #cart .item-decrement {
+	max-width: 1.8em;
 }
-#cart .item-decrement a, #cart .item-increment a, #cart .simpleCart_remove {
-	display: inline-block;
-	background: #eb3e0d;
-	line-height: 1rem;
-	text-align: center;
-	color: #FFF;
-	border-radius: 1000px;
-	-webkit-border-radius: 1000px;
-	font-weight: 700;
-	text-transform: uppercase;
+#cart a {
+	font-size: 1.3em;
 }
-#cart .simpleCart_remove {
-	padding:0.3rem 0.8rem;
-}
-#cart .item-increment a,
-#cart .item-decrement a {
-	width: 1.2rem;
-	height: 1.2rem;
-}
-#cart .item-decrement a:hover,
-#cart .item-increment a:hover {
+#cart a:hover {
 	background: #000;
 }
 #cart .simpleCart_checkout {
@@ -387,31 +373,28 @@ i {
 	padding: 1em;
 	color: #f53d09;
 }
-td.item-remove {
+/*td.item-remove {
 	width: 5em;
-}
+}*/
 
 .f-dropdown {
 	list-style-type: none !important;
 	white-space: nowrap !important;
 	min-width: auto;
 	width: auto !important;
+	font-weight: normal !important;
 }
 .f-dropdown span.dd-buynow {
-	display: inline-block;
-	padding: 0.2em;
-	background: #f53d09 !important;
-	color: #FFF;
-	border-radius: 10em;
-	-moz-border-radius: 10em;
-	-webkit-border-radius: 10em;
+	color: #f53d09 !important;
+	font-size: 1.6em !important;
 }
 .f-dropdown li a {
 	font-size: 1.3rem !important;
-	line-height: 1.45rem;
+	line-height: 1.7em;
 }
 .f-dropdown li a:hover {
-	color: #000000;	
+	color: #FFF;
+	background: #222;	
 }
 .hidden {
 	display: none;
@@ -436,7 +419,7 @@ td.item-remove {
 	top: -3em !important;
 }
 .details {
-	padding: 0 0 60% 0 !important;
+	padding: 0 0 55% 0 !important;
 	margin: 0 !important;
 	background-repeat: no-repeat !important;
 	background-position: top center;
@@ -448,7 +431,6 @@ td.item-remove {
 	height: 1.2em;
 	line-height: 1.5em !important;
 	padding: 0.05em;
-	overflow: hidden !important;
 }
 .dropdownClick i {
 	position: absolute !important;
@@ -460,12 +442,14 @@ td.item-remove {
 	margin: 0.3em auto auto 0.1em !important;
 	min-width: 25% !important;
 }
-.dd-buynow {
-	float: right;
-}
-
 @media only screen and (max-width: 40.063em) {
-
+	.item-total {
+		display: none ;
+	}
+	.cart-totals {
+		font-size: 1.2em !important;
+		line-height: 1.3em !important;
+	}
 	aside.controls { display: none !important; }
 	/*section div, section {
 		font-size: 1.2em !important;
@@ -486,8 +470,8 @@ td.item-remove {
 	   text-align: center !important; 
 	}
 	#cart .item-name {
-		max-width: 20% !important;
-		width: 20% !important;
+		display: tab;
+		max-width: 10% !important;
 		overflow: hidden !important;
 		white-space: nowrap !important;
 		text-overflow: ellipsis !important;
@@ -499,7 +483,7 @@ td.item-remove {
    		font-size: 110%;
    }
    .productSection h4 {
-   		margin-top: 2.2em !important
+   		margin-top: 2.4em !important
    }
    .f-dropdown {
 	   	margin-left: 0 !important;
@@ -559,7 +543,6 @@ td.item-remove {
 	line-height: 1em;
 	color: #FFF !important;
 }
-
 p.smaller {
 	font-size: 0.8em !important;
 }
@@ -577,15 +560,17 @@ aside.left-off-canvas-menu h3 {
 	background: #000;
 }
 .navicon {
-	position: absolute;
-	bottom: -2em;
+	position: fixed;
+	bottom: -2em !important;
+	left: 50%;
+/*	bottom: -2em;
 	left: 50%;
 	border-radius: 10em;
 	-moz-border-radius: 10em;
 	-webkit-border-radius: 10em;
 	width: 2em;
 	height: 2em;
-	margin-left: -1em !important;
+	margin-left: -1em !important;*/
 }
 .navicon a {
 	color: rgba(255,255,255,0.2);
