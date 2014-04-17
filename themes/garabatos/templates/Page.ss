@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 		<link rel="stylesheet" href="js/foundation/css/foundation.css" />
-		<link rel="stylesheet" href="js/reveal.js/css/reveal.min.css">
+		<link rel="stylesheet" href="js/reveal.js/css/reveal.css">
 		<link rel="stylesheet" href="$ThemeDir/css/style.css" id="theme">
 
 		<link rel="stylesheet" href="js/fontello/css/fontello.css">
@@ -48,7 +48,7 @@
 <div class="inner-wrap">
 
     <div class="btnwrap show-for-small-only">
-    	<a class="left-off-canvas-toggle" href="#" ><i class="icon-right-open"></i></a>
+    	<a class="left-off-canvas-toggle" href="#" ><i class="icon-angle-circled-right"></i></a>
     </div>
 
     <!-- Off Canvas Menu -->
@@ -229,10 +229,10 @@
 
 
 			$("a.left-off-canvas-toggle").click(function(e) {
-				menuicon.toggleClass("icon-right-open").toggleClass("icon-left-open");
+				menuicon.toggleClass("icon-angle-circled-right").toggleClass("icon-angle-circled-left");
 			});
 			$("a.exit-off-canvas").click(function(e) {
-				menuicon.toggleClass("icon-right-open").toggleClass("icon-left-open");
+				menuicon.toggleClass("icon-angle-circled-right").toggleClass("icon-angle-circled-left");
 			});
 
 

@@ -46,20 +46,24 @@
 
 <section id="cart">
 	<div class="cartwrap">
-		<h2>Your cart</h2>
-		<div class="simpleCart_items" ></div>
+		<div class="row">
+			<div class="medium-10 medium-centered small-12 columns">
+				<h2>Your cart</h2>
+				<div class="simpleCart_items" ></div>
 
-		<br />
-		SubTotal: <span id="simpleCart_total" class="simpleCart_total"></span> <br />
-		<!-- Tax Rate: <span id="simpleCart_taxRate" class="simpleCart_taxRate"></span><br />
-		Tax: <input type="checkbox" name="tax_checkbox" class="checkbox" value="10"> Check if you reside in California
-		<span id="simpleCart_tax" class="simpleCart_tax" style="display:none;"></span> <br /> -->
-		Shipping: <span id="simpleCart_shipping" class="simpleCart_shipping"></span><br/>
-		Final Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span> <br />
+				<br />
+				SubTotal: <span id="simpleCart_total" class="simpleCart_total"></span> <br />
+				<!-- Tax Rate: <span id="simpleCart_taxRate" class="simpleCart_taxRate"></span><br />
+				Tax: <input type="checkbox" name="tax_checkbox" class="checkbox" value="10"> Check if you reside in California
+				<span id="simpleCart_tax" class="simpleCart_tax" style="display:none;"></span> <br /> -->
+				Shipping: <span id="simpleCart_shipping" class="simpleCart_shipping"></span><br/>
+				Final Total: <span id="simpleCart_grandTotal" class="simpleCart_grandTotal"></span> <br />
 
-		<a href="javascript:;" class="simpleCart_checkout button round">checkout</a>	
-		
-		<div id="test_id"></div>
+				<a href="javascript:;" class="simpleCart_checkout button round">checkout</a>	
+				
+				<div id="test_id"></div>
+			</div>
+		</div>
 	</div>
 
 </section>
