@@ -315,7 +315,7 @@ input.itemQuantity:focus {
 	font-size: 1.3em;
 }
 #cart a:hover {
-	background: #000;
+	color: #FFFFFF;
 }
 #cart .simpleCart_checkout {
 	padding: 0.3rem 0.6em;
