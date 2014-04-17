@@ -148,7 +148,7 @@
 				theme: Reveal.getQueryHash().theme, 
 				transition: 'default',
 				minScale: 0.5,
-				maxScale: 0.7,
+				maxScale: 0.9,
 
 				// Parallax scrolling
 				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
