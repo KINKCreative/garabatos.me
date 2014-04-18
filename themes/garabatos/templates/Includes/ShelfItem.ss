@@ -17,13 +17,7 @@
 	
 	<div class="row">
 		<div class="medium-9 medium-centered small-12 columns">
-			<div class="details">
-				<style>
-					.details {
-						background-image: url($Image.SetWidth(700).URL);
-					}
-				</style>
-			</div>
+			<div class="details" style="background-image: url($Image.SetWidth(700).URL);"></div>
 		</div>
 	</div>
 
