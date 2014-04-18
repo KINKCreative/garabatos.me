@@ -509,6 +509,12 @@ aside.left-off-canvas-menu h3 {
 	margin-top: 1em;
 }
 
+.productSection {
+	position: relative !important;
+	display: block !important;
+	margin: auto auto !important;
+}
+
 
 @media only screen and (max-width: 40.063em) {
 	.item-total {
