@@ -23,6 +23,7 @@
 	<h2>$Title</h2>
 	$Content
 </section>
+<% end_if %>
 <% end_loop %>
 
 <section id="cart">
