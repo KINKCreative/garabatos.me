@@ -19,7 +19,7 @@
 
 <% loop Menu(1) %>
 <% if URLSegment!="home" %>
-<section id="contact">
+<section id="$URLSegment">
 	<h2>$Title</h2>
 	$Content
 </section>
