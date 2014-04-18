@@ -11,12 +11,8 @@
 <section id="about">
 	<h2>About Garabatos</h2>
 	<p>
-		<span class="garabatos">Garabatos</span> is a collection beautiful gifts.
+		<span class="garabatos">Garabatos</span> is a collection of beautiful gifts. Sketches, capturing the essence of their subject which never fail to move.
 	</p>
-
-	<aside class="notes">
-		Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-	</aside>
 </section>
 
 <!-- Example of nested vertical slides  data-background="#333333" -->
