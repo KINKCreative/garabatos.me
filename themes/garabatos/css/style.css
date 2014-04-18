@@ -98,9 +98,9 @@ section {
  *********************************************/
 .reveal section img {
 /*  margin: 15px 0px;*/
-  /*background: rgba(255, 255, 255, 0.12);*/
-  /*border: 4px solid #eeeeee;*/
-  /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);*/
+/*  background: rgba(255, 255, 255, 0.12);
+  border: 4px solid #eeeeee;*/
+/*  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);*/
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -ms-transition: all .2s linear;
@@ -184,6 +184,9 @@ section {
   z-index: 1005;
   font-weight: 300;
   color: #FFF;
+}
+.cart-nav span {
+	display: inline-block !important;
 }
 .side-nav {
 	left: 0;
@@ -303,7 +306,7 @@ input.itemQuantity:focus {
 	max-width: 1.8em;
 }
 #cart a {
-	font-size: 1.3em;
+	font-size: 1.2em;
 }	
 #cart a:hover {
 	color: #FFFFFF;
@@ -474,6 +477,7 @@ aside.left-off-canvas-menu h3 {
 	position: fixed;
 	bottom: -2em !important;
 	left: 50%;
+	margin-left: -0.5em !important;
 /*	bottom: -2em;
 	left: 50%;
 	border-radius: 10em;
@@ -499,6 +503,10 @@ aside.left-off-canvas-menu h3 {
 .text-left, .text-center, .text-right
 {
    text-align: center;
+}
+
+.productSection h4 {
+	margin-top: 1em;
 }
 
 
@@ -543,7 +551,7 @@ aside.left-off-canvas-menu h3 {
    		font-size: 110%;
    }
    .productSection h4 {
-   		margin-top: 1em !important
+   		margin-top: 4em !important
    }
    .f-dropdown {
 	   	margin-left: 0 !important;

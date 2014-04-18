@@ -73,7 +73,7 @@
 		<a href="#" class="logoWrap"><img src="$ThemeDir/images/Garabatos-Logo.png" class="logo" /></a>
 
 		<div class="nav cart-nav">
-			<i class="icon-basket-alt"></i></a> <a class="simpleCart_total orange" href="#/cart" ></a> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items<a href="javascript:;" class="simpleCart_empty orange" title="Empty trash"><i class="icon-trash"></i> </a>)
+			<i class="icon-basket-alt"></i></a> <a class="simpleCart_total orange" href="#/cart" ></a><span class="hide-for-small">&nbsp;( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items<a href="javascript:;" class="simpleCart_empty orange" title="Empty trash"><i class="icon-trash"></i></a>)</span>
 		</div>
 
 		<ul class="nav side-nav hide-for-small">
@@ -148,7 +148,7 @@
 				theme: Reveal.getQueryHash().theme, 
 				transition: 'default',
 				minScale: 0.5,
-				maxScale: 0.9,
+				maxScale: 0.8,
 
 				// Parallax scrolling
 				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
