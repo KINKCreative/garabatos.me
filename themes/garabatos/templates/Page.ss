@@ -142,13 +142,13 @@
 				history: true,
 				center: true,
 				width: "100%",
-				height: "100%",
+				height: "95%",
 				margin: 0,
 
 				theme: Reveal.getQueryHash().theme, 
 				transition: 'default',
 				minScale: 0.5,
-				maxScale: 0.75,
+				maxScale: 0.70,
 
 				// Parallax scrolling
 				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
