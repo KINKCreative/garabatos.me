@@ -20,8 +20,12 @@
 <% loop Menu(1) %>
 <% if URLSegment!="home" %>
 <section id="$URLSegment">
-	<h2>$Title</h2>
-	$Content
+	<div class="row">
+		<div class="medium-8 medium-centered small-12 columns">
+			<h2>$Title</h2>
+			$Content
+		</div>
+	</div>
 </section>
 <% end_if %>
 <% end_loop %>
