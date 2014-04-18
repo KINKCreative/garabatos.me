@@ -8,13 +8,6 @@
 	</p>
 </section>
 
-<section id="about">
-	<% with Page(about) %>
-		<h2>$Title</h2>
-		$Content
-	<% end_with %>
-</section>
-
 <!-- Example of nested vertical slides  data-background="#333333" -->
 <% loop Collections %>
 <section id="$URLSegment" >
@@ -24,12 +17,13 @@
 </section>
 <% end_loop %>
 
+<% loop Menu(1) %>
+<% if URLSegment!="home" %>
 <section id="contact">
-	<% with Page(contact) %>
-		<h2>$Title</h2>
-		$Content
-	<% end_with %>
+	<h2>$Title</h2>
+	$Content
 </section>
+<% end_loop %>
 
 <section id="cart">
 	<div class="cartwrap">
