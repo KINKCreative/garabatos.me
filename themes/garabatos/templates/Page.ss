@@ -148,7 +148,7 @@
 				theme: Reveal.getQueryHash().theme, 
 				transition: 'default',
 				minScale: 0.5,
-				maxScale: 0.8,
+				maxScale: 0.75,
 
 				// Parallax scrolling
 				//parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
@@ -156,12 +156,13 @@
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
-					{ src: 'js/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					/* { src: 'js/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
 					{ src: 'js/reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
 					{ src: 'js/reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-					{ src: 'js/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-					{ src: 'js/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
-					{ src: 'js/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+					{ src: 'js/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }, */
+					{ src: 'js/reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } }
+					/* ,
+					{ src: 'js/reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } } */
 				]
 			});
 
