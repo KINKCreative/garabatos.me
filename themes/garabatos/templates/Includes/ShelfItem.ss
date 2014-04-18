@@ -1,5 +1,5 @@
 <section id="$URLSegment" class="productSection">
-	<h4>$Collection.Title
+	<h5>$Title
 		<input type="hidden" class="itemQuantity" value="1" maxlength="2" />
 		<% if ProductVariations %>
 		<a class="button round primary dropdownClick" data-dropdown="drop-{$ID}"><i class="icon-basket-alt"></i></a>
@@ -12,7 +12,7 @@
 			</ul>
 		<% else %>
 		<% end_if %>
-	</h4>
+	</h5>
 					
 	
 	<div class="row">
