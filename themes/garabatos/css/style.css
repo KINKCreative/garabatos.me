@@ -509,12 +509,6 @@ aside.left-off-canvas-menu h3 {
 	margin-top: 1em;
 }
 
-.productSection {
-	position: relative !important;
-	display: block !important;
-	margin: auto auto !important;
-}
-
 
 @media only screen and (max-width: 40.063em) {
 	.item-total {
@@ -525,9 +519,6 @@ aside.left-off-canvas-menu h3 {
 		line-height: 1.3em !important;
 	}
 	aside.controls { display: none !important; }
-	/*section div, section {
-		font-size: 1.2em !important;
-	}*/
 	input.itemQuantity {
 		max-width: 2em !important;
 		font-size: 1em;
@@ -537,7 +528,7 @@ aside.left-off-canvas-menu h3 {
 		line-height: 1.2em;
 	}
 	h3 {
-		/*font-size: 1.3em !important;*/
+/*		font-size: 1.3em !important;*/
 	}
 	.text-left, .text-center, .text-right
 	{
@@ -577,7 +568,10 @@ aside.left-off-canvas-menu h3 {
    }
 }
 
-@media only screen and (orientation: portrait) {
+@media only screen and (max-width: 641px) and (orientation: portrait) {
+	.productSection h5 {
+		margin-top: 20% !important;
+	}
 	.details {
 		padding: 0 0 70% 0 !important;
 	}
