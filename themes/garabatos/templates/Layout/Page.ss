@@ -9,10 +9,10 @@
 </section>
 
 <section id="about">
-	<h2>About Garabatos</h2>
-	<p>
-		<span class="garabatos">Garabatos</span> is a collection of beautiful gifts. Sketches, capturing the essence of their subject which never fail to move.
-	</p>
+	<% with Page(about) %>
+		<h2>$Title</h2>
+		$Content
+	<% end_with %>
 </section>
 
 <!-- Example of nested vertical slides  data-background="#333333" -->
@@ -24,20 +24,11 @@
 </section>
 <% end_loop %>
 
-<section id="order">
-	<h2>How to order</h2>
-	<p>
-		<h4>We love you</h4>
-		<p>Order information here. Pick whatever you want. We ship it.</p>
-		<h4>Questions?</h4>
-		<p>Shoot us an email at<br/><a href="mailto:info@garabatos.me">info@garabatos.me</a></p>
-	</p>
-</section>
-
 <section id="contact">
-	<h2>How to contact us</h2>
-	<p>Call us at<br/><strong><a href="tel:2133949559">(213) 394-9559</a></strong></p>
-	<p>Shoot us an email at<br/><a href="mailto:info@garabatos.me">info@garabatos.me</a></p>
+	<% with Page(contact) %>
+		<h2>$Title</h2>
+		$Content
+	<% end_with %>
 </section>
 
 <section id="cart">

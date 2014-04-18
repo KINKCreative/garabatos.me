@@ -55,17 +55,7 @@
     <aside class="left-off-canvas-menu">
         <h3>Menu</h3>
         <ul class="side-nav">
-          <li><a href="#">Home</a></li>
-			<li><a class="collections_dropdown">Collections <i class="icon icon-angle-down"></i></a>
-				<ul class="collections_submenu submenu" style="display:none;">
-					<% loop Collections %>
-					<li><a href="#/$URLSegment">$Title</a></li>
-					<% end_loop %>
-				</ul>
-			</li>
-			<li><a href="#/order">How to order</a></li>
-			<li><a href="#/contact">Contact</a></li>
-			<li><a href="#/cart">Cart</a></li>
+          <% include Nav %>
         </ul>
     </aside>
 
@@ -77,17 +67,7 @@
 		</div>
 
 		<ul class="nav side-nav hide-for-small">
-			<li><a href="#">Home</a></li>
-			<li><a href="javascript:;" class="collections_dropdown">Collections <i class="icon icon-angle-down"></i></a>
-				<ul class="collections_submenu submenu" style="display:none;">
-					<% loop Collections %>
-					<li><a href="#/$URLSegment">$Title</a></li>
-					<% end_loop %>
-				</ul>
-			</li>
-			<li><a href="#/order">How to order</a></li>
-			<li><a href="#/contact">Contact</a></li>
-			<li><a href="#/cart">Cart</a></li>
+			<% include Nav %>
 		</ul>
 
 		<div class="reveal">
