@@ -25,7 +25,6 @@ ErrorDocument 500 /assets/error-500.html
 	RewriteEngine On
 	RewriteBase '/'
 
-
 	RewriteRule ^vendor(/|$) - [F,L,NC]
 	RewriteRule silverstripe-cache(/|$) - [F,L,NC]
 	RewriteRule composer\.(json|lock) - [F,L,NC]
