@@ -474,8 +474,8 @@ aside.left-off-canvas-menu h3 {
 	background: #000;
 }
 .navicon {
-	position: fixed;
-	bottom: -2em !important;
+	position: absolute;
+	bottom: -1em !important;
 	left: 50%;
 	margin-left: -0.5em !important;
 /*	bottom: -2em;
@@ -488,10 +488,10 @@ aside.left-off-canvas-menu h3 {
 	margin-left: -1em !important;*/
 }
 .navicon a {
-	color: rgba(255,255,255,0.2);
+	color: #f53d09;
 }
 .navicon a:hover {
-	color: #f53d09;
+	color: #FFFFFF;
 }
 
 .footer {
@@ -507,6 +507,43 @@ aside.left-off-canvas-menu h3 {
 
 .productSection h5 {
 	margin-top: 1em;
+}
+.license {
+	display: block;
+	color: #ccc;
+	position: fixed;
+	bottom:5px;
+	left: 5px;
+	width: 400px;
+	text-align: left;
+	z-index: 500;
+	padding: 5px;
+	font-size: 0.9em;
+	overflow: hidden;
+}
+.license:hover {
+	background: #222;
+}
+.license .license-icon {
+	display: block;
+	margin: 5px !important;
+}
+.license .license-details {
+	position: relative;
+	width: 100%;
+	width: 400px;
+}
+.license .license-details {
+	display: none;
+}
+.license:hover .license-details {
+	display: block !important;
+}
+section>small {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	color: #999;
 }
 
 

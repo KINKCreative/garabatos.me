@@ -1,4 +1,5 @@
 <section id="$URLSegment" class="productSection">
+	<small>$Collection.Title</small>
 	<h5>$Title
 		<input type="hidden" class="itemQuantity" value="1" maxlength="2" />
 		<% if ProductVariations %>
@@ -17,13 +18,14 @@
 	
 	<div class="row">
 		<div class="medium-9 medium-centered small-12 columns">
-			<div class="details" style="background-image: url($Image.SetWidth(700).URL);"></div>
+			<div class="details" style="background-image: url($Image.SetWidth(700).URL);">
+			</div>
 		</div>
 	</div>
 
 	<div class="navicon">
 	<% if Last %>
-		<a href="#/$FirstItem.URLSegment"><i class="icon-angle-circled-up"></i></a>
+		
 	<% else %>
 		<a href="#/$NextItem.URLSegment"><i class="icon-angle-circled-down"></i></a>
 	<% end_if %>
