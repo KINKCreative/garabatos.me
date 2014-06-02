@@ -1,4 +1,4 @@
-<?
+<?php
 
 class Product extends DataObject {
 
