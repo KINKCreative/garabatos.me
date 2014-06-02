@@ -1,7 +1,9 @@
 
-<img src="http://placehold.it/400/300" />
+<div class="imagewrap">
+	<img src="$Image.SetWidth(400).URL" alt="$Title" class="under" />
+</div>
 
-<h5>$Title</h5>
+<h5>$Title
 <input type="hidden" class="itemQuantity" value="1" maxlength="2" />
 <% if ProductVariations %>
 	<a class="button round primary dropdownClick" data-dropdown="drop-{$ID}"><i class="icon-basket-alt"></i></a>
@@ -12,5 +14,6 @@
 		  </li>
 	  	<% end_loop %>
 	</ul>
+</h5>
 <% else %>
 <% end_if %>
