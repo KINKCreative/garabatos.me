@@ -8,7 +8,7 @@
 				$Form
 				$CustomHtml.RAW
 
-				<ul class="large-block-grid-5 medium-block-grid-3">
+				<ul class="large-block-grid-4 medium-block-grid-3">
 					<% loop Products %>
 					<li><% include ShelfItem %></li>
 					<% end_loop %>

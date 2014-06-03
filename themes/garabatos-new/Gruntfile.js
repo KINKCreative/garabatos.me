@@ -37,6 +37,7 @@ module.exports = function(grunt) {
 						'../../js/foundation/bower_components/foundation/js/foundation.js',
 						'../../js/foundation/bower_components/foundation/js/foundation/foundation.orbit.js',
 						'../../js/simplecart-js/simpleCart.min.js',
+						'../../js/bower_components/fancybox/source/jquery.fancybox.js',
 						'js/src/main.js'
 					]
 				}

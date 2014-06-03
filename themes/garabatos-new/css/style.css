@@ -4,6 +4,7 @@
    $success-color: #43AC6A;
    $warning-color: #f08a24;
    $info-color: #a0d3e8; */
+@import url(../../../js/bower_components/fancybox/source/jquery.fancybox.css);
 /* line 31, ../scss/style.scss */
 .orange {
   color: #f53d09;
@@ -7739,69 +7740,69 @@ th.hide-for-touch {
 }
 
 /* STYLES BEGIN */
-/* line 51, ../scss/style.scss */
+/* line 53, ../scss/style.scss */
 .main {
   padding-top: 32px;
   min-height: 320px;
 }
 
 /* BASE CLASSES */
-/* line 58, ../scss/style.scss */
+/* line 60, ../scss/style.scss */
 section.pageSection {
   min-height: 5em;
   padding-bottom: 2rem;
   border-bottom: 1px solid #cacaca;
   background: #e3e3e3;
 }
-/* line 63, ../scss/style.scss */
+/* line 65, ../scss/style.scss */
 section.pageSection h1, section.pageSection p {
   text-align: center;
 }
-/* line 66, ../scss/style.scss */
+/* line 68, ../scss/style.scss */
 section.pageSection h1 {
   margin-top: 2rem;
 }
-/* line 67, ../scss/style.scss */
+/* line 69, ../scss/style.scss */
 section.pageSection p:last-child {
   margin-bottom: 0;
 }
 
 /* COLOR CLASSES */
-/* line 75, ../scss/style.scss */
+/* line 77, ../scss/style.scss */
 section.dark-grey, div.dark-grey {
   background: #272727;
 }
-/* line 78, ../scss/style.scss */
+/* line 80, ../scss/style.scss */
 section.medium-grey, div.medium-grey {
   background: #4e4e4e;
 }
-/* line 81, ../scss/style.scss */
+/* line 83, ../scss/style.scss */
 section.black, div.black {
   background: #000000;
 }
-/* line 84, ../scss/style.scss */
+/* line 86, ../scss/style.scss */
 section.black, section.dark-grey, section.medium-grey, section.has-bg, div.black, div.dark-grey, div.medium-grey, div.has-bg {
   border-bottom: 1px solid rgba(0, 0, 0, 0.25);
 }
-/* line 86, ../scss/style.scss */
+/* line 88, ../scss/style.scss */
 section.black h1, section.black h2, section.black h3, section.black h4, section.black h5, section.dark-grey h1, section.dark-grey h2, section.dark-grey h3, section.dark-grey h4, section.dark-grey h5, section.medium-grey h1, section.medium-grey h2, section.medium-grey h3, section.medium-grey h4, section.medium-grey h5, section.has-bg h1, section.has-bg h2, section.has-bg h3, section.has-bg h4, section.has-bg h5, div.black h1, div.black h2, div.black h3, div.black h4, div.black h5, div.dark-grey h1, div.dark-grey h2, div.dark-grey h3, div.dark-grey h4, div.dark-grey h5, div.medium-grey h1, div.medium-grey h2, div.medium-grey h3, div.medium-grey h4, div.medium-grey h5, div.has-bg h1, div.has-bg h2, div.has-bg h3, div.has-bg h4, div.has-bg h5 {
   color: #FFFFFF;
 }
-/* line 89, ../scss/style.scss */
+/* line 91, ../scss/style.scss */
 section.black p, section.dark-grey p, section.medium-grey p, section.has-bg p, div.black p, div.dark-grey p, div.medium-grey p, div.has-bg p {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* line 95, ../scss/style.scss */
+/* line 97, ../scss/style.scss */
 p.dark-grey, h1.dark-grey, h2.dark-grey, h3.dark-grey, h4.dark-grey, h5.dark-grey {
   color: #272727;
 }
-/* line 98, ../scss/style.scss */
+/* line 100, ../scss/style.scss */
 p.medium-grey, h1.medium-grey, h2.medium-grey, h3.medium-grey, h4.medium-grey, h5.medium-grey {
   color: #4e4e4e;
 }
 
-/* line 103, ../scss/style.scss */
+/* line 105, ../scss/style.scss */
 .has-bg {
   background-repeat: no-repeat;
   background-attachment: fixed !important;
@@ -7813,22 +7814,22 @@ p.medium-grey, h1.medium-grey, h2.medium-grey, h3.medium-grey, h4.medium-grey, h
   filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='.myBackground.jpg', sizingMethod='scale');
   -ms-filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='myBackground.jpg', sizingMethod='scale')";
 }
-/* line 114, ../scss/style.scss */
+/* line 116, ../scss/style.scss */
 .has-bg h1, .has-bg h2, .has-bg h3, .has-bg h4, .has-bg h5, .has-bg p {
   text-shadow: 0px 1px 4px rgba(0, 0, 0, 0.6);
 }
 
-/* line 120, ../scss/style.scss */
+/* line 122, ../scss/style.scss */
 .blockgrid li {
   text-align: center;
 }
 
-/* line 125, ../scss/style.scss */
+/* line 127, ../scss/style.scss */
 .logo-img {
   max-height: 35px !important;
 }
 
-/* line 128, ../scss/style.scss */
+/* line 130, ../scss/style.scss */
 .logo-home {
   max-height: 250px;
   margin: 2em 0;
@@ -7837,7 +7838,7 @@ p.medium-grey, h1.medium-grey, h2.medium-grey, h3.medium-grey, h4.medium-grey, h
 /* $body-bg: #fff !default;
 $body-font-color: #222 !default;
 $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default; */
-/* line 138, ../scss/style.scss */
+/* line 140, ../scss/style.scss */
 body {
   background: #1c1e20;
   background: -moz-radial-gradient(center, circle cover, #555a5f 0%, #1c1e20 100%);
@@ -7849,40 +7850,40 @@ body {
   font-weight: 300;
 }
 
-/* line 149, ../scss/style.scss */
+/* line 151, ../scss/style.scss */
 .button {
   font-family: "Crete Round", Tahoma, _serif;
   text-transform: uppercase;
 }
 
-/* line 154, ../scss/style.scss */
+/* line 156, ../scss/style.scss */
 .reveal-modal {
   color: #272727;
 }
-/* line 155, ../scss/style.scss */
+/* line 157, ../scss/style.scss */
 .reveal-modal h1, .reveal-modal h2, .reveal-modal h3, .reveal-modal h4, .reveal-modal h5, .reveal-modal h6 {
   color: #1c1e20;
 }
 
-/* line 161, ../scss/style.scss */
+/* line 163, ../scss/style.scss */
 footer {
   background: #1c1e20;
   padding-top: 1em;
   margin-top: 2em;
 }
-/* line 165, ../scss/style.scss */
+/* line 167, ../scss/style.scss */
 footer span.divider {
   display: inline-block;
   padding-left: 1em;
   margin-right: 1em;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* line 171, ../scss/style.scss */
+/* line 173, ../scss/style.scss */
 footer .columns {
   text-align: center;
 }
 
-/* line 176, ../scss/style.scss */
+/* line 178, ../scss/style.scss */
 .dropdownClick {
   float: right;
   top: 0.25em;
@@ -7891,7 +7892,7 @@ footer .columns {
   padding: 0.05em;
 }
 
-/* line 183, ../scss/style.scss */
+/* line 185, ../scss/style.scss */
 .dropdownClick i {
   position: absolute !important;
   left: -0.12em;
@@ -7900,7 +7901,7 @@ footer .columns {
 }
 
 /* SHOP DROPDOWNS */
-/* line 192, ../scss/style.scss */
+/* line 194, ../scss/style.scss */
 .f-dropdown {
   list-style-type: none !important;
   white-space: nowrap !important;
@@ -7909,46 +7910,46 @@ footer .columns {
   font-family: "Helvetica Neue", "Helvetica", "Arial", _sans;
 }
 
-/* line 199, ../scss/style.scss */
+/* line 201, ../scss/style.scss */
 .f-dropdown span.dd-buynow {
   color: #f53d09 !important;
 }
 
-/* line 202, ../scss/style.scss */
+/* line 204, ../scss/style.scss */
 .f-dropdown li a {
   line-height: 1.2em;
 }
 
-/* line 205, ../scss/style.scss */
+/* line 207, ../scss/style.scss */
 .f-dropdown li a:hover {
   color: #FFF;
   background: #222;
 }
 
-/* line 210, ../scss/style.scss */
+/* line 212, ../scss/style.scss */
 .imagewrap {
   position: relative;
   overflow: hidden;
 }
 
-/* line 214, ../scss/style.scss */
+/* line 216, ../scss/style.scss */
 .imagewrap img {
   position: relative;
 }
 
-/* line 217, ../scss/style.scss */
+/* line 219, ../scss/style.scss */
 .imagewrap .over {
   display: block;
   left: 0;
   bottom: 0;
   top: 0;
   right: 0;
-  z-index: 50;
+  z-index: 4;
   width: 100%;
   height: 100%;
 }
 
-/* line 227, ../scss/style.scss */
+/* line 229, ../scss/style.scss */
 .imagewrap .under {
-  z-index: 40;
+  z-index: 3;
 }

@@ -46,6 +46,8 @@ $section-padding: 2rem;
 @import "../../../js/foundation/scss/settings";
 @import "foundation";
 
+@import "../../../js/bower_components/fancybox/source/jquery.fancybox.css";
+
 /* STYLES BEGIN */
 
 .main {
@@ -220,10 +222,10 @@ footer {
 	bottom: 0;
 	top: 0;
 	right: 0;
-	z-index: 50;
+	z-index: 4;
 	width: 100%;
 	height: 100%;
 }
 .imagewrap .under {
-	z-index: 40;
+	z-index: 3;
 }

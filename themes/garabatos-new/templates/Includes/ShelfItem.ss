@@ -1,6 +1,8 @@
 
 <div class="imagewrap">
-	<img src="$Image.SetWidth(400).URL" alt="$Title" class="under" />
+	<a href="$Image.SetWidth(700).URL" rel="collection" class="fancybox">
+		<img src="$Image.SetWidth(400).URL" alt="$Title" class="under" />
+	</a>
 </div>
 
 <h5>$Title

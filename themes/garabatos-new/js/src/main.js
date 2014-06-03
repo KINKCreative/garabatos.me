@@ -69,3 +69,13 @@ $(".collections_dropdown").click(function(e) {
 	$(this).find(".icon").toggleClass("icon-angle-down").toggleClass("icon-angle-up");
 	return false;
 });
+
+$(document).ready(function() {
+	$("a.fancybox").fancybox(
+		onComplete: function() {
+            $("#fancybox-img").bind("contextmenu",function(e){
+                return false;
+            });
+        }
+	);
+});
