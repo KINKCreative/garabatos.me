@@ -71,11 +71,9 @@ $(".collections_dropdown").click(function(e) {
 });
 
 $(document).ready(function() {
-	$("a.fancybox").fancybox(
-		onComplete: function() {
-            $("#fancybox-img").bind("contextmenu",function(e){
-                return false;
-            });
-        }
-	);
+	$("a.fancybox").fancybox();
+
+	$('#fancybox-wrap').bind('contextmenu', function() {
+    	return false;
+	});
 });

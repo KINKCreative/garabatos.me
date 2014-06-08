@@ -46,3 +46,4 @@ app.yaml
 Capfile
 sftp-config.json
 
+.sass-cache
