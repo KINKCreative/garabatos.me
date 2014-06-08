@@ -35,7 +35,7 @@
 	<footer class="footer" role="contentinfo">
 		<div class="row">
 			<div class="large-12 columns">
-				<p>&copy; $Now.Year $SiteConfig.Title Made with <i class="icon-heart orange"></i> in <strong>LA</strong> <span class="divider"></span> <a href="#" data-reveal-id="license-modal">License</a>
+				<p>&copy; $Now.Year $SiteConfig.Title <span class="divider"></span> Made with <i class="icon-heart orange"></i> in <strong>LA</strong> <span class="divider"></span> <a href="#" data-reveal-id="license-modal">License</a>
 			</p>
 
 			</div>
