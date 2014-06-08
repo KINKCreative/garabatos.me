@@ -14,7 +14,9 @@ class HomePage extends Page {
 		    if(class_exists("Product")) {
 		    	$products = DataObject::get("Product","","Title ASC");
 		    	if($products) {
-		    		$fields->addFieldToTab("Root.Content.Featured",new DropdownField("FeaturedProductID", "Featured product", $products->toDropdownMap("ID","Title","Select")));
+		    		$ddfield = DropdownField::create("FeaturedProductID", "Featured product", $products->map("ID","Title"));
+		    		$ddfield->setEmptyString("Select");
+		    		$fields->addFieldToTab("Root.Content.Featured", );
 		    		$fields->addFieldToTab("Root.Content.Featured", new TextField("FeaturedProductTagline"));
 		    	}
 		    }
