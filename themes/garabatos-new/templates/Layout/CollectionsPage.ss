@@ -16,6 +16,7 @@
 							<img src="$Image.SetWidth(400).URL" alt="$Title" class="under" />
 						</div>
 					<% end_with %>
+						<h3>$Title</h3>
 					</a></li>
 				<% end_loop %>
 			</ul>
