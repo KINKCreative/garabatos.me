@@ -233,3 +233,40 @@ footer {
 .imagewrap .under {
 	z-index: 3;
 }
+
+
+/* CART STYLING */
+
+.cartwrap {
+	table {
+		border-spacing: 1px;
+		width: 100%;
+	}
+	table, table tr {
+		background: none;
+		border: none;
+	}
+	table tr.headerRow {
+		background: #000;
+	}
+	table tr.headerRow th, table td {
+		color: #FFF;
+	}
+	.itemRow {
+		background: rgba(255,255,255,0.1);
+	}
+	.item-quantity, .item-price, .item-total {
+		text-align: center;
+		font-weight: bold;
+	}
+	.cart-totals {
+		text-align:center;
+		line-height: 1.5em;
+	}
+	.simpleCart_grandTotal, .simpleCart_shipping, .simpleCart_total {
+		font-weight: bold;
+	}
+	.item-remove {
+		width: 40px;
+	}
+}

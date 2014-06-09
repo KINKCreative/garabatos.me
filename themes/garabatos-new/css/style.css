@@ -8266,3 +8266,45 @@ footer .columns {
 .imagewrap .under {
   z-index: 3;
 }
+
+/* CART STYLING */
+/* line 241, ../scss/style.scss */
+.cartwrap table {
+  border-spacing: 1px;
+  width: 100%;
+}
+/* line 245, ../scss/style.scss */
+.cartwrap table, .cartwrap table tr {
+  background: none;
+  border: none;
+}
+/* line 249, ../scss/style.scss */
+.cartwrap table tr.headerRow {
+  background: #000;
+}
+/* line 252, ../scss/style.scss */
+.cartwrap table tr.headerRow th, .cartwrap table td {
+  color: #FFF;
+}
+/* line 255, ../scss/style.scss */
+.cartwrap .itemRow {
+  background: rgba(255, 255, 255, 0.1);
+}
+/* line 258, ../scss/style.scss */
+.cartwrap .item-quantity, .cartwrap .item-price, .cartwrap .item-total {
+  text-align: center;
+  font-weight: bold;
+}
+/* line 262, ../scss/style.scss */
+.cartwrap .cart-totals {
+  text-align: center;
+  line-height: 1.5em;
+}
+/* line 266, ../scss/style.scss */
+.cartwrap .simpleCart_grandTotal, .cartwrap .simpleCart_shipping, .cartwrap .simpleCart_total {
+  font-weight: bold;
+}
+/* line 269, ../scss/style.scss */
+.cartwrap .item-remove {
+  width: 40px;
+}
