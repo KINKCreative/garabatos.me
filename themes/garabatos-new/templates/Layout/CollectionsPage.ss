@@ -7,6 +7,19 @@
 				$Content
 				$Form
 				$CustomHtml.RAW
+
+				<ul class="large-block-grid-3">
+				<% loop Collections %>
+					<a href="$Link">
+					<% with Products.First %>
+						<div class="imagewrap">
+							<img src="$Image.SetWidth(400).URL" alt="$Title" class="under" />
+						</div>
+					<% end_with %>
+					</a>
+				<% end_loop %>
+			</ul>
+
 			</article>
 		</div>
 

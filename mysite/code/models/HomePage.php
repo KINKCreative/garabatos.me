@@ -16,8 +16,8 @@ class HomePage extends Page {
 		    	if($products) {
 		    		$ddfield = DropdownField::create("FeaturedProductID", "Featured product", $products->map("ID","Title"));
 		    		$ddfield->setEmptyString("Select");
-		    		$fields->addFieldToTab("Root.Content.Featured", $ddfield);
-		    		$fields->addFieldToTab("Root.Content.Featured", new TextField("FeaturedProductTagline"));
+		    		$fields->addFieldToTab("Root.Featured", $ddfield);
+		    		$fields->addFieldToTab("Root.Featured", new TextField("FeaturedProductTagline"));
 		    	}
 		    }
 		 	
