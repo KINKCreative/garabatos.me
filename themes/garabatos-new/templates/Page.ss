@@ -21,7 +21,7 @@
 </head>
 <body class="$ClassName.ATT $URLSegment">
 
-	<nav class="top-bar hide-for-medium-up" data-topbar role="navigation">
+	<nav class="top-bar" data-topbar role="navigation">
 	  <ul class="title-area">
 	    <li class="name">
 	      <h1><a href="#">$SiteConfig.Title</a></h1>
@@ -31,10 +31,9 @@
 	  </ul>
 
 	  <section class="top-bar-section">
-				<ul class="right">
-				<li class="divider"></li>
+			<ul class="right">
 				<% loop Menu(1) %>
-				<li class="<% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %><% if $Children %> has-dropdown<% end_if %>">
+				<li class="hide-for-medium-up <% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %><% if $Children %> has-dropdown<% end_if %>">
 					<a href="$Link" title="Go to $Title.ATT">$MenuTitle</a>
 					<% if $Children %>
 						<ul class="dropdown">
@@ -55,8 +54,9 @@
 						</ul>
 					<% end_if %>
 				</li>
-				<% if not Last %><li class="divider"></li><% end_if %>
 				<% end_loop %>
+				<li><a href="cart"><i class="icon-basket-alt"></i><span class="simpleCart_total orange"></span> ( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items )</a></li>
+				<li><a href="javascript:;" class="simpleCart_empty orange" title="Empty cart"><i class="fa fa-trash"></i></a></li>
 			</ul>
 	  </section>
 	</nav>
