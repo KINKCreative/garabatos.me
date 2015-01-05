@@ -16,24 +16,65 @@
 	<meta property="og:image" content="<% with $Image.SetSize(500,500) %>$AbsoluteURL.ATT<% end_with %>" />
 	<% end_if %>
 	<link rel="icon" type="image/png" href="$ThemeDir/favicon.ico" />
-	<%--See [Requirements](http://doc.silverstripe.org/framework/en/reference/requirements) for loading from controller--%>
-	<link rel="stylesheet" href="js/fontello/css/fontello.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="$ThemeDir/css/style.css" />
 </head>
 <body class="$ClassName.ATT $URLSegment">
 
-	<header class="header" role="banner">
-		<div class="fixed contain-to-grid">
-			<% include TopBar %>
+	<nav class="top-bar hide-for-medium-up" data-topbar role="navigation">
+	  <ul class="title-area">
+	    <li class="name">
+	      <h1><a href="#">$SiteConfig.Title</a></h1>
+	    </li>
+	     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+	    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+	  </ul>
+
+	  <section class="top-bar-section">
+				<ul class="right">
+				<li class="divider"></li>
+				<% loop Menu(1) %>
+				<li class="<% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %><% if $Children %> has-dropdown<% end_if %>">
+					<a href="$Link" title="Go to $Title.ATT">$MenuTitle</a>
+					<% if $Children %>
+						<ul class="dropdown">
+							<!-- <li><label>$MenuTitle</label></li> -->
+							<% loop $Children %>
+							<li class="<% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %><% if $Children %> has-dropdown<% end_if %>">
+								<a href="$Link" title="Go to $Title.ATT">$MenuTitle</a>
+								<% if $Children %>
+								<ul class="dropdown">
+									<% loop $Children %>
+									<li class="<% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %>"><a href="$Link" title="Go to the $Title.ATT">$MenuTitle</a></li>
+									<% end_loop %>
+								</ul>
+								<% end_if %>
+							</li>
+							<% end_loop %>
+							<!-- <li><a href="$Link">See all &rarr;</a></li> -->
+						</ul>
+					<% end_if %>
+				</li>
+				<% if not Last %><li class="divider"></li><% end_if %>
+				<% end_loop %>
+			</ul>
+	  </section>
+	</nav>
+
+	<div class="row">
+		<div class="large-4 columns">
 		</div>
-	</header>
+		<div class="large-8 columns">
+			<% include MainMenu %>
+		</div>
+	</div>
 
 	$Layout
 
 	<footer class="footer" role="contentinfo">
 		<div class="row">
 			<div class="large-12 columns">
-				<p>&copy; $Now.Year $SiteConfig.Title <span class="divider"></span> Made with <i class="icon-heart orange"></i> in <strong>LA</strong> <span class="divider"></span> <a href="#" data-reveal-id="license-modal">License</a>
+				<p>&copy; $Now.Year $SiteConfig.Title <span class="divider"></span> Made with <i class="fa fa-heart orange"></i> in <strong>LA</strong> <span class="divider"></span> <a href="#" data-reveal-id="license-modal">License</a>
 			</p>
 
 			</div>

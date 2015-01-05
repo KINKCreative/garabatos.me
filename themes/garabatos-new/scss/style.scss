@@ -1,3 +1,7 @@
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:300,600|Josefin+Slab:300,700);
+
+@import "../../../node_modules/compass-mixins/lib/_compass";
+
 $primary-color: #f53d09;
 
 $default-text-shadow-color: rgba(black, 0.6);
@@ -5,13 +9,10 @@ $default-text-shadow-blur: 4px;
 $default-text-shadow-v-offset: 1px;
 $default-text-shadow-h-offset: 0px;
 
-$header-font-family: "Crete Round", Tahoma, _serif;
 $header-font-color: #FFF;
 
 $body-font-color: #CCCCCC;
 $topbar-bg-color: darken(#1e2023, 10%);
-
-@import "compass/css3/text-shadow";
 
 /*// Grid
 // $row-width: rem-calc(1000);
@@ -38,8 +39,6 @@ $section-padding: 2rem;
 @import "../../../vendor/bower_components/foundation/scss/foundation/_settings";
 @import "../../../vendor/bower_components/foundation/scss/foundation";
 
-// @import "../../../vendor/bower_components/fancybox/source/jquery.fancybox";
-
 .logo-img {
   max-height: 35px !important;
  }
@@ -54,17 +53,19 @@ $section-padding: 2rem;
  $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default; */
 
 body {
-   background: #1c1e20;
+   background: #E7E7E7;
+   font-family: "Josefin Sans", "Helvetica", _sans-serif;
  }
 
 .button {
-  font-family: "Crete Round", Tahoma, _serif;
+  font-family: "Josefin Slab", "Helvetica", _sans-serif;;
   text-transform: uppercase;
 }
 
 .reveal-modal {
   h1, h2, h3, h4, h5, h6 {
     color: $body-bg;
+    font-family: "Josefin Slab", "Tahoma", _sans-serif;
   }
   color: $dark-grey;
 }
@@ -101,7 +102,7 @@ footer {
   white-space: nowrap !important;
   font-weight: normal !important;
   font-size: 1.2rem;
-  font-family: "Helvetica Neue", "Helvetica", "Arial", _sans;
+  /* font-family: "Helvetica Neue", "Helvetica", "Arial", _sans; */
 }
 
  .f-dropdown span.dd-buynow {

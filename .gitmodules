@@ -44,3 +44,6 @@
 [submodule "gridfield-betterbuttons"]
 	path = gridfield-betterbuttons
 	url = https://github.com/unclecheese/silverstripe-gridfield-betterbuttons
+[submodule "vendor/icomoon"]
+	path = vendor/icomoon
+	url = https://github.com/Keyamoon/IcoMoon-Free.git

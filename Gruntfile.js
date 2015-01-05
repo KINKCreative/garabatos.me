@@ -34,16 +34,13 @@ module.exports = function(grunt) {
       }
     },
 
-    sass: {                              // Task
-      dist: {
-        options: {                       // Target options
-          style: 'expanded',
-          compass: true,
-          loadPath: "vendor/foundation/bower_components/foundation/scss"
-        },
-        files: {
-          'themes/garabatos-new/css/style.css' : 'themes/garabatos-new/scss/style.scss'
-        }
+    libsass: { 
+      options: {
+        loadPath: ["vendor/foundation/bower_components/foundation/scss"]
+      },
+      myTarget: {
+          src: 'themes/garabatos-new/scss/style.scss',
+          dest: 'themes/garabatos-new/css/style.css'
       }
     },
 
@@ -111,12 +108,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks( 'grunt-contrib-cssmin' );
   grunt.loadNpmTasks( 'grunt-contrib-uglify' );
   grunt.loadNpmTasks( 'grunt-contrib-watch' );
-  grunt.loadNpmTasks( 'grunt-contrib-sass' );
+  grunt.loadNpmTasks( 'grunt-libsass' );
   // grunt.loadNpmTasks( 'grunt-contrib-connect' );
   // grunt.loadNpmTasks( 'grunt-zip' );
 
   // Default task
-  grunt.registerTask( 'default', [ 'jshint', 'sass', 'cssmin', 'uglify', 'watch' ] );
+  grunt.registerTask( 'default', [ 'jshint', 'libsass', 'cssmin', 'uglify', 'watch' ] );
 
   // Theme task
   // grunt.registerTask( 'themes', [ 'sass' ] );
