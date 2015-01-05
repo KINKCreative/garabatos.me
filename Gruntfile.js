@@ -24,13 +24,25 @@ module.exports = function(grunt) {
         files: {
           'themes/garabatos/js/application.min.js': 
           [
-            "js/reveal.js/js/reveal.js",
-            'js/foundation/js/vendor/modernizr.js',
-            "js/foundation/js/foundation.js",
-            "js/reveal.js/lib/js/head.js",
-            "js/simplecart-js/simpleCart.js",
-            "js/src/application.js"
+            "vendor/reveal.js/js/reveal.js",
+            'vendor/bower_components/foundation/js/vendor/modernizr.js',
+            "vendor/bower_components/foundation/js/foundation.js",
+            "vendor/simplecart-js/simpleCart.js",
+            "vendor/src/application.js"
           ]
+        }
+      }
+    },
+
+    sass: {                              // Task
+      dist: {
+        options: {                       // Target options
+          style: 'expanded',
+          compass: true,
+          loadPath: "vendor/foundation/bower_components/foundation/scss"
+        },
+        files: {
+          'themes/garabatos-new/css/style.css' : 'themes/garabatos-new/scss/style.scss'
         }
       }
     },
@@ -38,13 +50,13 @@ module.exports = function(grunt) {
     cssmin: {
       compress: {
         files: {
-          'themes/garabatos/css/style.min.css': 
+          'themes/garabatos-new/css/style.min.css': 
           [ 
-            "js/reveal.js/css/reveal.css",
-            "js/foundation/css/foundation.css",
-            "js/fontello/css/fontello.css",
-            "js/fontello/css/animation.css",
-            "themes/garabatos/css/style.css",
+            // "js/foundation/css/foundation.css",
+            // "js/fontello/css/fontello.css",
+            // "js/fontello/css/animation.css",
+            // "themes/garabatos/css/style.css",
+            "themes/garabatos-new/css/style.css"
           ]
         }
       }
@@ -86,7 +98,7 @@ module.exports = function(grunt) {
 
     watch: {
       main: {
-        files: [ 'Gruntfile.js', 'js/src/application.js', 'themes/garabatos/css/style.css' ],
+        files: [ 'Gruntfile.js', 'vendor/src/application.js', 'themes/garabatos-new/scss/*.scss' ],
         tasks: 'default'
       }
     }
@@ -104,7 +116,7 @@ module.exports = function(grunt) {
   // grunt.loadNpmTasks( 'grunt-zip' );
 
   // Default task
-  grunt.registerTask( 'default', [ 'jshint', 'cssmin', 'uglify' ] );
+  grunt.registerTask( 'default', [ 'jshint', 'sass', 'cssmin', 'uglify', 'watch' ] );
 
   // Theme task
   // grunt.registerTask( 'themes', [ 'sass' ] );

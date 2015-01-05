@@ -27,8 +27,6 @@
 			<% include TopBar %>
 		</div>
 	</header>
-	
-	<% include Sections %>
 
 	$Layout
 

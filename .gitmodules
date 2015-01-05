@@ -25,20 +25,17 @@
 [submodule "RestfulServer"]
 	path = RestfulServer
 	url = https://github.com/silverstripe/silverstripe-restfulserver.git
-[submodule "js/skrollr"]
-	path = js/skrollr
+[submodule "vendor/skrollr"]
+	path = vendor/skrollr
 	url = https://github.com/Prinzhorn/skrollr.git
 [submodule "google-sitemaps"]
 	path = google-sitemaps
 	url = https://github.com/silverstripe-labs/silverstripe-googlesitemaps
-[submodule "js/reveal.js"]
-	path = js/reveal.js
-	url = https://github.com/hakimel/reveal.js
 [submodule "gridfieldeditablemanymanyextracolumns"]
 	path = gridfieldeditablemanymanyextracolumns
 	url = https://github.com/smindel/silverstripe-gridfieldeditablemanymanyextracolumns
-[submodule "js/simplecart-js"]
-	path = js/simplecart-js
+[submodule "vendor/simplecart-js"]
+	path = vendor/simplecart-js
 	url = https://github.com/wojodesign/simplecart-js.git
 	
 [submodule "GridFieldRelationHandler"]
