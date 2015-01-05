@@ -1,6 +1,3 @@
-
-$(document).foundation();
-
 simpleCart({
     checkout: {
       type: "PayPal",
@@ -63,17 +60,38 @@ $(".checkbox").change(function() {
 	}
 });
 
-$(".collections_dropdown").click(function(e) {
-	e.preventDefault();
-	$(this).next().slideToggle(500);
-	$(this).find(".icon").toggleClass("icon-angle-down").toggleClass("icon-angle-up");
-	return false;
+$(".sidebar a.accordion-link").click(function(e) {
+  url = $(this).attr("href");
+  location.href = url;
 });
 
-$(document).ready(function() {
-	$("a.fancybox").fancybox();
+// $(".sidebar .expandable").click(function(e) {  
+// 	// e.preventDefault();
+// 	$(".expandable .fa").removeClass("fa-angle-up").addClass("fa-angle-down");
+// 	$(this).find(".fa").toggleClass("fa-angle-down").toggleClass("fa-angle-up");
+// 	return false;
+// });
 
-	$('#fancybox-wrap').bind('contextmenu', function() {
+$(document).ready(function() {
+
+  $('.single-item').slick({
+    prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></button>',
+    nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></button>',
+    dots: true,
+    centerMode: true,
+    adaptiveHeight: true
+  });
+  $('.variable-width').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 1,
+    centerMode: true,
+    variableWidth: true
+  });
+	//$("a.fancybox").fancybox();
+
+	/* $('#fancybox-wrap').bind('contextmenu', function() {
     	return false;
-	});
+	}); */
 });

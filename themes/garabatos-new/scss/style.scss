@@ -1,43 +1,47 @@
-@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:300,600|Josefin+Slab:300,700);
+@import url(http://fonts.googleapis.com/css?family=Josefin+Sans:300,600|Josefin+Slab:300,600);
 
 @import "../../../node_modules/compass-mixins/lib/_compass";
 
-$primary-color: #f53d09;
+a {
+  transform: all 0.3s;
+  -moz-transform: all 0.3s;
+  -webkit-transform: all 0.3s;
+}
 
+$primary-color: #da4601;
 $default-text-shadow-color: rgba(black, 0.6);
 $default-text-shadow-blur: 4px;
 $default-text-shadow-v-offset: 1px;
 $default-text-shadow-h-offset: 0px;
 
-$header-font-color: #FFF;
+$font-family-sans-serif: "Josefin Sans", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+$font-family-serif: "Josefin Slab", Georgia, Cambria, "Times New Roman", Times, serif;
 
-$body-font-color: #CCCCCC;
-$topbar-bg-color: darken(#1e2023, 10%);
 
-/*// Grid
+/* SHADOWS */
+
+$default-box-shadow-color: rgba(0,0,0,0.5);
+/* $default-box-shadow-h-offset: 0px !default;
+$default-box-shadow-v-offset: 0px !default;
+$default-box-shadow-blur: 5px !default;
+$default-box-shadow-spread : false !default;
+$default-box-shadow-inset : false !default; */
+
+
+/* BODY STYLING */
+$body-bg: #FFFFFF;
+$body-font-color: #555555;
+$body-font-family: $font-family-sans-serif;
+
+/* GRID */
 // $row-width: rem-calc(1000);
-$column-gutter: 0;
-// $total-columns: 12;*/
+$column-gutter: rem-calc(0);
 
-$body-bg: #1c1e20;
-
-.orange {
-  color: $primary-color;
-}
-
-/* PRESETS */
-
-$header-bottom-margin: 1rem;
-
-$bright-blue: #79cae3;
-$light-grey: #e3e3e3;
-$dark-grey: #272727;
-$medium-grey: #4e4e4e;
-
-$section-padding: 2rem;
-
-@import "../../../vendor/bower_components/foundation/scss/foundation/_settings";
+/* IMPORTS */
+@import "_presets";
+@import "_foundation_settings";
 @import "../../../vendor/bower_components/foundation/scss/foundation";
+@import "../../../vendor/bower_components/slick.js/slick/slick";
 
 .logo-img {
   max-height: 35px !important;
@@ -47,25 +51,15 @@ $section-padding: 2rem;
   max-height: 250px;
   margin: 2em 0;
 }
- 
- /* $body-bg: #fff !default;
- $body-font-color: #222 !default;
- $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif !default; */
-
-body {
-   background: #E7E7E7;
-   font-family: "Josefin Sans", "Helvetica", _sans-serif;
- }
 
 .button {
-  font-family: "Josefin Slab", "Helvetica", _sans-serif;;
+  font-family: $font-family-serif;
   text-transform: uppercase;
 }
 
 .reveal-modal {
   h1, h2, h3, h4, h5, h6 {
     color: $body-bg;
-    font-family: "Josefin Slab", "Tahoma", _sans-serif;
   }
   color: $dark-grey;
 }
@@ -88,91 +82,27 @@ footer {
   }
 }
 
-.dropdownClick i {
-  position: absolute !important;
-  left: -0.12em;
-  top: 0em;
-  font-size: 1em !important;
+
+.row-fluid {
+  min-width: 100% !important;
 }
 
-/* SHOP DROPDOWNS */
-
-.f-dropdown {
-  list-style-type: none !important;
-  white-space: nowrap !important;
-  font-weight: normal !important;
-  font-size: 1.2rem;
-  /* font-family: "Helvetica Neue", "Helvetica", "Arial", _sans; */
+.section-padded {
+  padding: 0 30px;
+}
+.nopadding {
+  padding: 0;
 }
 
- .f-dropdown span.dd-buynow {
-  color: #f53d09 !important;
+.layout {
+  border-left: 1px solid #EFEFEF;
+  background: #F2F2F2;
+  min-height: 500px;
 }
-.f-dropdown li a {
-  line-height: 1.2em;
-}
-
-.f-dropdown li a:hover {
-  color: #FFF;
-  background: #222; 
+footer {
+  border-top: 1px solid #EFEFEF;
+  margin-top: 0;
 }
 
-.imagewrap {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
-}
-
-.imagewrap img {
-  position: relative;
-}
-
-.imagewrap .over {
-  display: block;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  right: 0;
-  z-index: 4;
-  width: 100%;
-  height: 100%;
-}
-.imagewrap .under {
-  z-index: 3;
-}
-
-/* CART STYLING */
-
-.cartwrap {
-  table {
-    border-spacing: 1px;
-    width: 100%;
-  }
-  table, table tr {
-    background: none;
-    border: none;
-  }
-  table tr.headerRow th, table td {
-    color: #FFF;
-  }
-  .itemRow {
-    background: rgba(255,255,255,0.1);
-  }
-  .item-quantity, .item-price, .item-total {
-    text-align: center;
-    font-weight: bold;
-  }
-  .cart-totals {
-    text-align:center;
-    line-height: 1.5em;
-  }
-  .simpleCart_grandTotal, .simpleCart_shipping, .simpleCart_total {
-    font-weight: bold;
-  }
-  .item-remove {
-    width: 40px;
-  }
-  table tr.headerRow {
-    background: #000;
-  }
-}
+@import "shop";
+@import "sidebar";

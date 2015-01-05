@@ -1,15 +1,23 @@
-<div class="main typography" role="main">
-	<div class="row">
-
-		<div class="large-8 large-centered columns ">
-			<article class="text-center">
-				<img src="$ThemeDir/images/Garabatos-Logo.png" class="logo-home" />
-				$Content
-				$Form
-				$CustomHtml.RAW
-				<% include Images %>
-			</article>
-		</div>
-
+$Image.CroppedImage(1000,562)
+<article class="text-center">
+	
+	<%-- $Content --%>
+	$Form
+	$CustomHtml.RAW
+	<% include Images %>
+	<h2>Collections</h2>
+	<div class="section-padded">
+		<ul class="large-block-grid-3 blockgrid">
+		<% loop Collections %>
+			<li><a href="$Link">
+			<% with Products.First %>
+				<div class="imagewrap">
+					<img src="$Image.CroppedImage(500,500).URL" alt="$Title" class="under" />
+				</div>
+			<% end_with %>
+				<h3>$Title</h3>
+			</a></li>
+		<% end_loop %>
 	</div>
-</div>
+</ul>
+</article>

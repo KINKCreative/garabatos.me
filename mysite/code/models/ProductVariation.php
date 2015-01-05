@@ -5,7 +5,9 @@ class ProductVariation extends DataObject {
 	private static $db = array(
 		'Title' => 'Varchar(255)',
 		'DefaultPrice' => 'Currency',
-        'SKUExtension' => 'Varchar(16)'
+        'SKUExtension' => 'Varchar(16)',
+        'WidthIn' => 'Int',
+        'HeightIn' => 'Int'
 	);
 
 	private static $belongs_many_many = array(
@@ -31,5 +33,14 @@ class ProductVariation extends DataObject {
     public function getPrice() {
         return $this->DefaultPrice;
     }
+
+    public function getPxWidth() {
+        return $this->WidthIn * 25;
+    }
+
+    public function getPxHeight() {
+        return $this->HeightIn * 25;
+    }
+    
 
 }

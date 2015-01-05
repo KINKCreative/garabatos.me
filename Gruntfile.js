@@ -22,13 +22,13 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'themes/garabatos/js/application.min.js': 
+          'themes/garabatos-new/js/min/app.min.js': 
           [
-            "vendor/reveal.js/js/reveal.js",
             'vendor/bower_components/foundation/js/vendor/modernizr.js',
             "vendor/bower_components/foundation/js/foundation.js",
             "vendor/simplecart-js/simpleCart.js",
-            "vendor/src/application.js"
+            "vendor/bower_components/slick.js/slick/slick.js",
+            "themes/garabatos-new/js/src/main.js"
           ]
         }
       }
@@ -95,7 +95,7 @@ module.exports = function(grunt) {
 
     watch: {
       main: {
-        files: [ 'Gruntfile.js', 'vendor/src/application.js', 'themes/garabatos-new/scss/*.scss' ],
+        files: [ 'Gruntfile.js', 'themes/garabatos-new/js/src/main.js', 'themes/garabatos-new/scss/*.scss' ],
         tasks: 'default'
       }
     }

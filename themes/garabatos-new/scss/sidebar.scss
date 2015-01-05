@@ -1,0 +1,47 @@
+ul.accordion {
+  margin-left: 0;
+}
+
+.sidebar {
+  background: #FFF;
+  padding: 1em;
+
+  .accordion {
+    margin: 1em -1em;
+    text-transform: uppercase;
+
+    .side-nav {
+      padding: 0;
+      background: #EFEFEF;
+      
+      li {
+        margin: 0;
+        a {
+          padding: 0 1em !important;
+          line-height: 2.4rem;
+          font-size: 1rem;
+
+          &:hover {
+            background: #333;
+            color: #FFF;
+          }
+        }
+      }
+    }
+  }
+
+  .accordion-navigation > a {
+    background: #FFF;
+  }
+
+}
+
+.accordion-navigation .expandable:after {
+  font-family: "FontAwesome";
+  content: "";
+  float: right;
+}
+.accordion-navigation.active .expandable:after {
+  font-family: "FontAwesome";
+  content: "";
+}

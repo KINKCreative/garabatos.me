@@ -5,4 +5,6 @@ After: framework/routes#coreroutes
 Director:
   rules:
     'search/$ID' : 'Search_Controller'
-    'project' : 'ProjectController'
+    'collection' : 'CollectionsPage_Controller'
+    'products/$URLSegment'  : 'Product_Controller'
+    'blankimage/$width/$height'  : 'BlankImage_Controller'

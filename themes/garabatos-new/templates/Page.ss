@@ -19,68 +19,59 @@
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="$ThemeDir/css/style.css" />
 </head>
+
 <body class="$ClassName.ATT $URLSegment">
+	
+	<div class="row row-fluid">
+		<div class="large-3 columns sidebar">
 
-	<nav class="top-bar" data-topbar role="navigation">
-	  <ul class="title-area">
-	    <li class="name">
-	      <h1><a href="#">$SiteConfig.Title</a></h1>
-	    </li>
-	     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-	    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-	  </ul>
+			<div class="row">
+				<div class="small-6 large-12 columns">
+					<a href="#">
+						<img src="$ThemeDir/images/Garabatos-Logo-Dark.png" class="logo-side" />
+					</a>
+				</div>
+				<div class="small-6 large-12 columns">
 
-	  <section class="top-bar-section">
-			<ul class="right">
+					<a href="cart"><i class="icon-basket-alt"></i><span class="simpleCart_total"></span> ( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items )</a>
+
+					<a href="javascript:;" class="simpleCart_empty orange" title="Empty cart"><i class="fa fa-trash"></i></a>
+				</div>
+			</div>
+
+			<ul class="accordion" data-accordion >
 				<% loop Menu(1) %>
-				<li class="hide-for-medium-up <% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %><% if $Children %> has-dropdown<% end_if %>">
-					<a href="$Link" title="Go to $Title.ATT">$MenuTitle</a>
-					<% if $Children %>
-						<ul class="dropdown">
-							<!-- <li><label>$MenuTitle</label></li> -->
-							<% loop $Children %>
-							<li class="<% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %><% if $Children %> has-dropdown<% end_if %>">
-								<a href="$Link" title="Go to $Title.ATT">$MenuTitle</a>
-								<% if $Children %>
-								<ul class="dropdown">
+					<li class="accordion-navigation <% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %>">
+						<% if Children %>
+							<a href="#panel_{$URLSegment}" title="$Title.ATT" class="expandable">$MenuTitle</a>
+							<div id="panel_{$URLSegment}" class="content <% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %>">
+								<ul class="side-nav">
 									<% loop $Children %>
-									<li class="<% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %>"><a href="$Link" title="Go to the $Title.ATT">$MenuTitle</a></li>
+										<li class="<% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %>"><a href="$Link" title="Go to the $Title.ATT">$MenuTitle</a></li>
 									<% end_loop %>
 								</ul>
-								<% end_if %>
-							</li>
-							<% end_loop %>
-							<!-- <li><a href="$Link">See all &rarr;</a></li> -->
-						</ul>
-					<% end_if %>
-				</li>
+							</div>
+						<% else %>
+							<a href="$Link" title="Go to $Title.ATT" class="accordion-link">$MenuTitle</a>
+						<% end_if %>
+					</li>
 				<% end_loop %>
-				<li><a href="cart"><i class="icon-basket-alt"></i><span class="simpleCart_total orange"></span> ( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items )</a></li>
-				<li><a href="javascript:;" class="simpleCart_empty orange" title="Empty cart"><i class="fa fa-trash"></i></a></li>
 			</ul>
-	  </section>
-	</nav>
-
-	<div class="row">
-		<div class="large-4 columns">
 		</div>
-		<div class="large-8 columns">
-			<% include MainMenu %>
+		<div class="large-9 columns layout">
+			$Layout
 		</div>
 	</div>
 
-	$Layout
-
 	<footer class="footer" role="contentinfo">
 		<div class="row">
-			<div class="large-12 columns">
+			<div class="large-12 columns text-center">
 				<p>&copy; $Now.Year $SiteConfig.Title <span class="divider"></span> Made with <i class="fa fa-heart orange"></i> in <strong>LA</strong> <span class="divider"></span> <a href="#" data-reveal-id="license-modal">License</a>
 			</p>
 
 			</div>
 		</div>
 	</footer>
-
 
 	<div id="license-modal" class="reveal-modal medium" data-reveal>
 		<div class="license">
@@ -94,7 +85,10 @@
 		</div>
 		<a class="close-reveal-modal">&#215;</a>
 	</div>
-
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="$ThemeDir/js/min/app.min.js"></script>
+	<script>
+		$(document).foundation();
+	</script>
 </body>
 </html>

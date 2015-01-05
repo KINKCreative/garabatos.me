@@ -8,6 +8,7 @@ class Product extends DataObject {
 		'Title' => 'Varchar(255)',
         'SKUBase' => 'Varchar(16)',
 		'Description' => 'Text',
+        'Portrait' => 'Boolean'
 		//'QuickPrice' => 'Currency'
 	);
 
@@ -59,6 +60,14 @@ class Product extends DataObject {
             // $fields->addFieldToTab('Root.Main', $gridField);
         }
         return $fields;
+    }
+
+    public function Link() {
+        return "products/" . $this->URLSegment;
+    }
+
+    public function AbsoluteLink() {
+        return "http://garabatos.me/products/" . $this->URLSegment;
     }
 
     public function NextItem() {
