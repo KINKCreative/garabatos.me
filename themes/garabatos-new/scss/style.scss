@@ -8,7 +8,7 @@ a {
   -webkit-transform: all 0.3s;
 }
 
-$primary-color: #da4601;
+$primary-color: #c90002;
 $default-text-shadow-color: rgba(black, 0.6);
 $default-text-shadow-blur: 4px;
 $default-text-shadow-v-offset: 1px;
@@ -50,6 +50,9 @@ $column-gutter: rem-calc(0);
 .logo-home {
   max-height: 250px;
   margin: 2em 0;
+}
+.logo-side {
+  padding: 25px;
 }
 
 .button {
@@ -103,6 +106,17 @@ footer {
   border-top: 1px solid #EFEFEF;
   margin-top: 0;
 }
+
+.orbit-bullets-container {
+  margin-top: -50px;
+  .orbit-bullets li {
+    background: rgba(255,255,255,0.3);
+    &.active {
+      background: #FFFFFF;
+    }
+  }
+}
+
 
 @import "shop";
 @import "sidebar";

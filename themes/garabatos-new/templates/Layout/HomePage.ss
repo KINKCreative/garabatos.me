@@ -1,10 +1,10 @@
-$Image.CroppedImage(1000,562)
+<% include Images %>
 <article class="text-center">
 	
 	<%-- $Content --%>
 	$Form
 	$CustomHtml.RAW
-	<% include Images %>
+	
 	<h2>Collections</h2>
 	<div class="section-padded">
 		<ul class="large-block-grid-3 blockgrid">

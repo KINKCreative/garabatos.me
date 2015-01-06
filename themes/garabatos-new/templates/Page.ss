@@ -33,9 +33,11 @@
 				</div>
 				<div class="small-6 large-12 columns">
 
-					<a href="cart"><i class="icon-basket-alt"></i><span class="simpleCart_total"></span> ( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items )</a>
+					<div class="cart-tools">
+						<a href="cart"><i class="icon-basket-alt"></i><span class="simpleCart_total"></span> ( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items )</a>
 
-					<a href="javascript:;" class="simpleCart_empty orange" title="Empty cart"><i class="fa fa-trash"></i></a>
+						<a href="javascript:;" class="simpleCart_empty orange" title="Empty cart"><i class="fa fa-trash"></i></a>
+					</div>
 				</div>
 			</div>
 
