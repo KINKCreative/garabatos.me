@@ -29,19 +29,72 @@ ul.accordion {
       }
     }
   }
-
-  .accordion-navigation > a {
-    background: #FFF;
+  .accordion-navigation {
+    > a {
+      background: #FFF;
+    }
   }
-
 }
 
-.accordion-navigation .expandable:after {
-  font-family: "FontAwesome";
-  content: "";
-  float: right;
+.accordion-navigation {
+  .expandable:after {
+    font-family: "FontAwesome";
+    content: "";
+    float: right;
+  }
+  &.active .expandable:after {
+    font-family: "FontAwesome";
+    content: "";
+  }
 }
-.accordion-navigation.active .expandable:after {
-  font-family: "FontAwesome";
-  content: "";
+
+
+// OFF CANVAS
+
+.left-off-canvas-menu {
+  .accordion-navigation {
+    text-transform: uppercase;
+    a {
+      background: rgba(255,255,255,0) !important;
+      border-bottom: rgba(255,255,255,0.1);
+      color: #FFF;
+    }
+    .active a,
+    a:hover {
+      background: rgba(255,255,255,0.1) !important;
+    }
+  }
+  .side-nav {
+    background: rgba(255,255,255,0.1);
+  }
+}
+
+.left-off-canvas-toggle {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 60px;
+  padding: 10px;
+  width: 60px;
+  font-size: 25px;
+  z-index: 1000;
+}
+
+
+// MOBILE OVERRIDES
+
+@media screen and (max-width: #{lower-bound($large-range)}) {
+  .sidebar {
+    padding: 0 20px 0 60px;
+    height: 80px;
+    .logo-side {
+      padding: 10px;
+      height: 80px;
+    }
+  }
+  .cart-tools {
+    margin: 0;
+    line-height: 80px;
+  }
 }

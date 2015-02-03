@@ -2,7 +2,7 @@
 
   <div class="section-padded">
     <article>
-        <h2>$Title</h2>
+        <h2 class="small-text-center">$Title</h2>
         
         $Content
 
@@ -14,17 +14,21 @@
             <div class="single-item slick">
               <% loop ProductVariations %>
                 <div class="simpleCart_shelfItem">
+                  <div class="row">
+                    <div class="large-8 columns large-centered">
+                      
+                      <% if Up.Portrait %>
+                        $Up.Image.CroppedImage($PxWidth,$PxHeight)
+                      <% else %>
+                        $Up.Image.CroppedImage($PxHeight,$PxWidth)
+                      <% end_if %>
 
-                  <div class="product-image-wrapper" style="background-image: url($Up.Image.SetWidth(700).URL);">
-                    <img src="http://placehold.it/<% if Up.Portrait %>{$PxWidth}x{$PxHeight}<% else %>{$PxHeight}x{$PxWidth}<% end_if %>" />
+                    </div> 
                   </div>
-
-                  <h3>$Title</h3>
-                  <p>{$DefaultPrice.Nice}</p>
-                  <a href="javascript:;" class="addItem button round button-small" data-title="$Up.Title" data-price ="$DefaultPrice" data-sku="{$Up.SKUBase}-{$SKUExtension}" data-variation="$Title">Add to Cart <!-- i class="fa fa-plus-circle right"></i --></a>
-
-                  
-
+                  <div class="details">
+                    <h3>$Title <small>{$DefaultPrice.Nice}</small></h3>
+                    <a href="javascript:;" class="addItem button round button-small" data-title="$Up.Title" data-price ="$DefaultPrice" data-sku="{$Up.SKUBase}-{$SKUExtension}" data-variation="$Title">Add to Cart <!-- i class="fa fa-plus-circle right"></i --></a>
+                  </div>
                 </div>
               <% end_loop %>
             </div>
@@ -36,7 +40,7 @@
         
       </article>
 
-      <h4 class="text-center"><% with Collection %><i class="fa fa-angle-left"></i> <a href="$Link">Back to <strong>$Title</strong></a><% end_with %></h4>
+      <h4 class="text-center"><% with Collection %><i class="fa fa-angle-left"></i> Back to <a href="$Link"><strong>$Title</strong></a><% end_with %></h4>
   </div>
 
 </div>

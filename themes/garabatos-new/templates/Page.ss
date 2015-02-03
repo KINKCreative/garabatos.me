@@ -21,59 +21,64 @@
 </head>
 
 <body class="$ClassName.ATT $URLSegment">
-	
-	<div class="row row-fluid">
-		<div class="large-3 columns sidebar">
+	<div class="off-canvas-wrap" data-offcanvas>
+	  <div class="inner-wrap">
 
-			<div class="row">
-				<div class="small-6 large-12 columns">
-					<a href="#">
-						<img src="$ThemeDir/images/Garabatos-Logo-Dark.png" class="logo-side" />
-					</a>
+	    <a class="left-off-canvas-toggle hide-for-large-up button left" href="#" ><i class="fa fa-bars"></i></a>
+
+	    <!-- Off Canvas Menu -->
+	    <aside class="left-off-canvas-menu">
+	    		<img src="$ThemeDir/images/Garabatos-Logo.png" class="logo-side" />
+	        <!-- Off-Canvas Menu -->
+	      	<% include Menu_Accordion %>
+	    </aside>
+
+	    <!-- main content goes here -->
+	    <div class="row row-fluid">
+				<div class="large-3 columns sidebar">
+
+					<div class="row">
+						<div class="small-3 large-12 columns">
+							<a href="#">
+								<img src="$ThemeDir/images/Garabatos-Logo-Dark.png" class="logo-side" />
+							</a>
+						</div>
+						<div class="small-9 large-12 columns small-text-right">
+
+							<div class="cart-tools medium-text-right large-text-center">
+								<a href="cart"><i class="icon-basket-alt"></i><span class="simpleCart_total"></span> ( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items )</a>
+
+								<a href="javascript:;" class="simpleCart_empty orange" title="Empty cart"><i class="fa fa-trash"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<div class="show-for-large-up">
+						<% include Menu_Accordion %>
+					</div>
+
+				</div><!-- end sidebar -->
+
+				<div class="large-9 columns layout">
+					$Layout
 				</div>
-				<div class="small-6 large-12 columns">
+			</div>
 
-					<div class="cart-tools">
-						<a href="cart"><i class="icon-basket-alt"></i><span class="simpleCart_total"></span> ( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items )</a>
+			<footer class="footer" role="contentinfo">
+				<div class="row">
+					<div class="large-12 columns text-center">
+						<p>&copy; $Now.Year $SiteConfig.Title <span class="divider"></span> Made with <i class="fa fa-heart orange"></i> in <strong>LA</strong> <span class="divider"></span> <a href="#" data-reveal-id="license-modal">License</a>
+					</p>
 
-						<a href="javascript:;" class="simpleCart_empty orange" title="Empty cart"><i class="fa fa-trash"></i></a>
 					</div>
 				</div>
-			</div>
+			</footer>
 
-			<ul class="accordion" data-accordion >
-				<% loop Menu(1) %>
-					<li class="accordion-navigation <% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %>">
-						<% if Children %>
-							<a href="#panel_{$URLSegment}" title="$Title.ATT" class="expandable">$MenuTitle</a>
-							<div id="panel_{$URLSegment}" class="content <% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %>">
-								<ul class="side-nav">
-									<% loop $Children %>
-										<li class="<% if $LinkingMode == "current" || $LinkingMode == "section" %>active<% end_if %>"><a href="$Link" title="Go to the $Title.ATT">$MenuTitle</a></li>
-									<% end_loop %>
-								</ul>
-							</div>
-						<% else %>
-							<a href="$Link" title="Go to $Title.ATT" class="accordion-link">$MenuTitle</a>
-						<% end_if %>
-					</li>
-				<% end_loop %>
-			</ul>
-		</div>
-		<div class="large-9 columns layout">
-			$Layout
-		</div>
+	  <!-- close the off-canvas menu -->
+	  <a class="exit-off-canvas"></a>
+
+	  </div>
 	</div>
-
-	<footer class="footer" role="contentinfo">
-		<div class="row">
-			<div class="large-12 columns text-center">
-				<p>&copy; $Now.Year $SiteConfig.Title <span class="divider"></span> Made with <i class="fa fa-heart orange"></i> in <strong>LA</strong> <span class="divider"></span> <a href="#" data-reveal-id="license-modal">License</a>
-			</p>
-
-			</div>
-		</div>
-	</footer>
 
 	<div id="license-modal" class="reveal-modal medium" data-reveal>
 		<div class="license">

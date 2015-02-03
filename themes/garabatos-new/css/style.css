@@ -5864,7 +5864,7 @@ footer {
   min-width: 100% !important; }
 
 .section-padded {
-  padding: 0 30px; }
+  padding: 30px; }
 
 .nopadding {
   padding: 0; }
@@ -5986,22 +5986,23 @@ footer {
   text-align: center; }
 
 .slick.single-item .simpleCart_shelfItem img {
-  display: inline-block; }
-
-.product-image-wrapper {
   display: inline-block;
-  background-position: center center;
-  background-size: cover; }
+  margin: 10px 0; }
 
-.product-image-wrapper img {
-  opacity: 0;
-  max-height: 400px; }
+.simpleCart_shelfItem img {
+  max-height: 420px;
+  pointer-events: none; }
+  @media screen and (max-width: 40em) {
+    .simpleCart_shelfItem img {
+      max-height: 360px; } }
 
 /* CART STYLING */
 .cart-tools {
   margin: 1em 0;
-  text-align: center;
   font-family: "Josefin Slab", Georgia, Cambria, "Times New Roman", Times, serif; }
+  @media screen and ("only screen and (min-width:64.063em)") {
+    .cart-tools {
+      margin: 2em 0; } }
 
 .cartwrap table {
   border-spacing: 1px;
@@ -6054,7 +6055,39 @@ ul.accordion {
   font-family: "FontAwesome";
   content: "";
   float: right; }
-
 .accordion-navigation.active .expandable:after {
   font-family: "FontAwesome";
   content: ""; }
+
+.left-off-canvas-menu .accordion-navigation {
+  text-transform: uppercase; }
+  .left-off-canvas-menu .accordion-navigation a {
+    background: rgba(255, 255, 255, 0) !important;
+    border-bottom: rgba(255, 255, 255, 0.1);
+    color: #FFF; }
+  .left-off-canvas-menu .accordion-navigation .active a, .left-off-canvas-menu .accordion-navigation a:hover {
+    background: rgba(255, 255, 255, 0.1) !important; }
+.left-off-canvas-menu .side-nav {
+  background: rgba(255, 255, 255, 0.1); }
+
+.left-off-canvas-toggle {
+  display: inline-block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  line-height: 60px;
+  padding: 10px;
+  width: 60px;
+  font-size: 25px;
+  z-index: 1000; }
+
+@media screen and (max-width: 64.063em) {
+  .sidebar {
+    padding: 0 20px 0 60px;
+    height: 80px; }
+    .sidebar .logo-side {
+      padding: 10px;
+      height: 80px; }
+  .cart-tools {
+    margin: 0;
+    line-height: 80px; } }

@@ -60,7 +60,7 @@ $(".checkbox").change(function() {
 	}
 });
 
-$(".sidebar a.accordion-link").click(function(e) {
+$("a.accordion-link").click(function(e) {
   url = $(this).attr("href");
   location.href = url;
 });
@@ -78,8 +78,8 @@ $(document).ready(function() {
     prevArrow: '<button type="button" class="slick-prev"><i class="fa fa-chevron-left"></button>',
     nextArrow: '<button type="button" class="slick-next"><i class="fa fa-chevron-right"></button>',
     dots: true,
-    centerMode: true,
-    adaptiveHeight: true
+    // centerMode: true,
+    // adaptiveHeight: true
   });
   $('.variable-width').slick({
     dots: true,
