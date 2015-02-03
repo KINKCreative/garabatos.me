@@ -27,7 +27,7 @@
                   </div>
                   <div class="details">
                     <h3>$Title <small>{$DefaultPrice.Nice}</small></h3>
-                    <a href="javascript:;" class="addItem button round button-small" data-title="$Up.Title" data-price ="$DefaultPrice" data-sku="{$Up.SKUBase}-{$SKUExtension}" data-variation="$Title">Add to Cart <!-- i class="fa fa-plus-circle right"></i --></a>
+                    <a href="javascript:;" class="addItem button round button-small" data-title="$Up.Title" data-price ="$DefaultPrice" data-sku="{$Up.SKUBase}-{$SKUExtension}" data-variation="$Title">Add to My Cart <!-- i class="fa fa-plus-circle right"></i --></a>
                   </div>
                 </div>
               <% end_loop %>

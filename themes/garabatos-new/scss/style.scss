@@ -92,6 +92,9 @@ footer {
 
 .section-padded {
   padding: 30px;
+  @media screen and (max-width: #{lower-bound($large-range)}) {
+    padding: 15px;
+  }
 }
 .nopadding {
   padding: 0;

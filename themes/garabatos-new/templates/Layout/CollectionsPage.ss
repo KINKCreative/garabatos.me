@@ -8,7 +8,7 @@
 				$Form
 				$CustomHtml.RAW
 
-				<ul class="large-block-grid-3">
+				<ul class="large-block-grid-3 medium-block-grid-2 blockgrid">
 				<% loop Collections %>
 					<li><a href="$Link">
 					<% with Products.First %>
@@ -19,7 +19,7 @@
 						<h3>$Title</h3>
 					</a></li>
 				<% end_loop %>
-			</ul>
+					</ul>
 
 			</article>
 		</div>

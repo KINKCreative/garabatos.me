@@ -5,16 +5,26 @@ simpleCart({
     },
     cartStyle: "table",
     shippingCustom: function(){ 
-    	return 5 + simpleCart.quantity()*2;
+      sh = 12;
+      if(simpleCart.total() > 100) {
+        sh = 0;
+      }
+      else {
+        sh = Math.round( simpleCart.total()*0.1 );
+        if(sh < 12) {
+          sh = 12;
+        }
+      }
+      return sh;
     },
     cartColumns: [
         { attr: "name", label: "Name"},
         { view: "currency", attr: "price", label: "Price"},
-        { view: "decrement", text: '<i class="icon-minus-circled"></i>', label: false},
+        { view: "decrement", text: '<i class="fa fa-minus-square-o"></i>', label: false},
         { attr: "quantity", label: "Qty"},
-        { view: "increment", text: '<i class="icon-plus-circled"></i>', label: false},
+        { view: "increment", text: '<i class="fa fa-plus-square-o"></i>', label: false},
         { view: "currency", attr: "total", label: "SubTotal" },
-        { view: "remove", text: '<i class="icon-cancel-circled"></i>', label: false }
+        { view: "remove", text: '<i class="fa fa-remove"></i>', label: false }
     ],
 });
 
@@ -89,6 +99,11 @@ $(document).ready(function() {
     centerMode: true,
     variableWidth: true
   });
+
+  // $(window).scroll(Foundation.utils.throttle(function(e){
+  //   scroll = $(window).scrollTop();
+  //   $(".off-canvas-wrap:not(.move-right) .left-off-canvas-menu").css("top",scroll);
+  // }, 100));
 	//$("a.fancybox").fancybox();
 
 	/* $('#fancybox-wrap').bind('contextmenu', function() {

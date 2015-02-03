@@ -7,7 +7,7 @@
 	
 	<h2>Collections</h2>
 	<div class="section-padded">
-		<ul class="large-block-grid-3 blockgrid">
+		<ul class="large-block-grid-3 medium-block-grid-2 blockgrid">
 		<% loop Collections %>
 			<li><a href="$Link">
 			<% with Products.First %>

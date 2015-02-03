@@ -148,16 +148,18 @@
     border-spacing: 1px;
     width: 100%;
   }
-  table, table tr {
-    background: none;
-    border: none;
+  // table, table tr {
+  //   background: none;
+  //   border: none;
+  // }
+  table tr.headerRow th {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
   }
-  table tr.headerRow th, table td {
-    color: #FFF;
-  }
-  .itemRow {
-    background: rgba(255,255,255,0.1);
-  }
+  // .itemRow {
+  //   background: rgba(255,255,255,0.1);
+  // }
   .item-quantity, .item-price, .item-total {
     text-align: center;
     font-weight: bold;
@@ -167,12 +169,22 @@
     line-height: 1.5em;
   }
   .simpleCart_grandTotal, .simpleCart_shipping, .simpleCart_total {
-    font-weight: bold;
+    font-weight: 700;
   }
   .item-remove {
     width: 40px;
   }
-  table tr.headerRow {
-    background: #000;
+  .item-decrement, .item-increment, .item-remove {
+    text-align: center;
+    padding: 1px;
+    a {
+      display: inline-block;
+      line-height: 35px;
+      height: 30px;
+      font-size: 24px;
+    }
   }
+  // table tr.headerRow {
+  //   background: #000;
+  // }
 }

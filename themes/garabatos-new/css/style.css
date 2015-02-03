@@ -5865,6 +5865,9 @@ footer {
 
 .section-padded {
   padding: 30px; }
+  @media screen and (max-width: 64.063em) {
+    .section-padded {
+      padding: 15px; } }
 
 .nopadding {
   padding: 0; }
@@ -6007,13 +6010,10 @@ footer {
 .cartwrap table {
   border-spacing: 1px;
   width: 100%; }
-.cartwrap table, .cartwrap table tr {
-  background: none;
-  border: none; }
-.cartwrap table tr.headerRow th, .cartwrap table td {
-  color: #FFF; }
-.cartwrap .itemRow {
-  background: rgba(255, 255, 255, 0.1); }
+.cartwrap table tr.headerRow th {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px; }
 .cartwrap .item-quantity, .cartwrap .item-price, .cartwrap .item-total {
   text-align: center;
   font-weight: bold; }
@@ -6021,11 +6021,17 @@ footer {
   text-align: center;
   line-height: 1.5em; }
 .cartwrap .simpleCart_grandTotal, .cartwrap .simpleCart_shipping, .cartwrap .simpleCart_total {
-  font-weight: bold; }
+  font-weight: 700; }
 .cartwrap .item-remove {
   width: 40px; }
-.cartwrap table tr.headerRow {
-  background: #000; }
+.cartwrap .item-decrement, .cartwrap .item-increment, .cartwrap .item-remove {
+  text-align: center;
+  padding: 1px; }
+  .cartwrap .item-decrement a, .cartwrap .item-increment a, .cartwrap .item-remove a {
+    display: inline-block;
+    line-height: 35px;
+    height: 30px;
+    font-size: 24px; }
 
 ul.accordion {
   margin-left: 0; }
@@ -6087,7 +6093,8 @@ ul.accordion {
     height: 80px; }
     .sidebar .logo-side {
       padding: 10px;
-      height: 80px; }
+      height: 80px;
+      width: 127px; }
   .cart-tools {
     margin: 0;
     line-height: 80px; } }

@@ -27,7 +27,7 @@
 	    <a class="left-off-canvas-toggle hide-for-large-up button left" href="#" ><i class="fa fa-bars"></i></a>
 
 	    <!-- Off Canvas Menu -->
-	    <aside class="left-off-canvas-menu">
+	    <aside class="left-off-canvas-menu fixed">
 	    		<img src="$ThemeDir/images/Garabatos-Logo.png" class="logo-side" />
 	        <!-- Off-Canvas Menu -->
 	      	<% include Menu_Accordion %>
@@ -38,12 +38,12 @@
 				<div class="large-3 columns sidebar">
 
 					<div class="row">
-						<div class="small-3 large-12 columns">
+						<div class="small-5 large-12 columns">
 							<a href="#">
 								<img src="$ThemeDir/images/Garabatos-Logo-Dark.png" class="logo-side" />
 							</a>
 						</div>
-						<div class="small-9 large-12 columns small-text-right">
+						<div class="small-7 large-12 columns small-text-right">
 
 							<div class="cart-tools medium-text-right large-text-center">
 								<a href="cart"><i class="icon-basket-alt"></i><span class="simpleCart_total"></span> ( <span id="simpleCart_quantity" class="simpleCart_quantity"></span> items )</a>
